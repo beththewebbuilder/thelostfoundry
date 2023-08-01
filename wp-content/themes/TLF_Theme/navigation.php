@@ -1,5 +1,5 @@
 <div class="mobile-nav-icon">
-    <div class="icon center-transform">
+    <div class="icon">
         <i class="fa-solid fa-bars"></i>
     </div>
 </div>
@@ -7,7 +7,7 @@
 <div class="mobile-nav-page">
     <div class="close-nav"><i class="fa-solid fa-xmark"></i></div>
 
-    <div class="navigation-items">
+    <div class="navigation-items center-transform">
         <div class="logo">
             <img src="<?php echo get_bloginfo('template_directory'); ?>/images/tlf-long-logo.png"/>
         </div>

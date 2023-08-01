@@ -12,9 +12,14 @@
     .icon {
         color: white;
         font-size: 4rem;
-        top: 9rem;
-        left: 9rem;
+        top: 6.5rem;
+        left: 7.5rem;
         position: absolute;
+    }
+
+    &:hover, &:focus, &:active {
+        cursor: pointer;
+        background-color: $primary-red;
     }
 }
 
@@ -27,6 +32,7 @@
     background-color: $primary-grey;
     color: white;
     display: none;
+    z-index: $mobile-navigation-page-z-index;
 
     .close-nav {
         position: absolute;

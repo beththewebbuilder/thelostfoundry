@@ -1,0 +1,28 @@
+footer {
+    text-align: center;
+    color: $primary-grey;
+    margin-top: 4rem;
+
+    .footer-logo {
+        height: 10rem;
+        margin-bottom: 1rem;
+        img {
+            height: 100%;
+        }
+    }
+    .social-media {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        .social-link {
+            font-size: 3rem;
+            margin-left: 1rem;
+        }
+    }
+    a {
+        color: $primary-grey;
+        &:hover {
+            color: $primary-red;
+        }
+    }
+}
