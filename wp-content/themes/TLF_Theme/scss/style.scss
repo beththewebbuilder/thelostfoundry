@@ -6,3 +6,7 @@ Description: Styled theme for The Lost Foundry company website - initially creat
 Version: 1.0.0
 Text Domain: thelostfoundry
 */
+
+@import '_variables.scss';
+@import '_base.scss';
+@import '_navigation.scss';

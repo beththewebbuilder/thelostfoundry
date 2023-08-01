@@ -1,0 +1,20 @@
+// FONTS
+@font-face {
+    font-family: Adventure;
+    src: url(fonts/Adventure.otf);
+}
+@font-face {
+    font-family: Adventure-Hollow;
+    src: url(fonts/AdventureHollow.otf);
+}
+
+$adventure-font: "Adventure", Arial, Helvetica, sans-serif;
+$adventure-hollow-font: "Adventure-Hollow", Arial, Helvetica, sans-serif;
+$regular-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+// COLOURS
+$primary-grey: #262626;
+$primary-red: #F30529;
+
+// Z-INDEX
+$mobile-navigation-z-index: 1;
