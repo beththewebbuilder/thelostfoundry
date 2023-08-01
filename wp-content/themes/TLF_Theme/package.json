@@ -1,0 +1,18 @@
+{
+    "name": "the-lost-foundry",
+    "version": "1.0.0",
+    "description": "The Lost Foundry WP theme",
+    "main": "index.js",
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:scripts": "wp-scripts build",
+    "project-sass": "sass --watch scss/style.scss style.css",
+    "plugin-sass": "sass --watch custom_plugins/style/plugin.scss custom_plugins/style/plugin.css",
+    "dev": "concurrently \"wp-scripts start [**PATHS-TO-PLUGIN E.G. CUSTOM_PLUGINS/HOMEPAGE_VIDEO.JS**] --output-path=build\" \"npm run plugin-sass\" \"npm run project-sass\""
+    },
+    "author": "build'n'bloom",
+    "license": "ISC",
+    "devDependencies": {
+    "@wordpress/scripts": "24.4.0"
+    }
+}
