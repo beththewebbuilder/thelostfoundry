@@ -28,13 +28,17 @@ add_filter( 'block_categories_all', 'custom_block_category', 10, 2);
 // function for all custom blocks to be registered that are created
 function custom_gutenburg_blocks()
 {
-  // global edit css
-  wp_enqueue_style('plugin-css', get_template_directory_uri() . '/custom_plugins/style/plugin.css', array());
+    // global edit css
+    wp_enqueue_style('plugin-css', get_template_directory_uri() . '/custom_plugins/style/plugin.css', array());
 
-  $pluginFolder = "tlf-plugins";
+    $pluginFolder = "tlf-plugins";
 
-  // video container
-  generateRegisterScriptText($pluginFolder, "video_container", "video-container");
+    // video container
+    generateRegisterScriptText($pluginFolder, "video_container", "video-container");
+    // autoplay video
+    generateRegisterScriptText($pluginFolder, "autoplay_video", "autoplay-video");
+    // content container
+    generateRegisterScriptText($pluginFolder, "content_container", "content-container");
 
 }
 add_action('init', 'custom_gutenburg_blocks');

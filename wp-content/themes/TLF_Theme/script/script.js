@@ -35,6 +35,11 @@ $(document).ready(function() {
         player.pause();
         $(this).css("display", "none");
     });
+
+    // autoplay video
+    $(".autoplay-video").each(function() {
+        $(this).find(".wp-block-video video").css("height", getHeightFromDataAttr($(this).attr('data-video-height')));
+    })
 });
 
 function getHeightFromDataAttr(dataAttr){
