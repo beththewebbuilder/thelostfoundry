@@ -6,7 +6,6 @@ const { PanelBody, PanelRow, TextControl, SelectControl, CheckboxControl } = wp.
 const ALLLOWED_BLOCKS = ['core/group'];
 const BLOCK_TEMPLATE = [
     ['core/group', {}, [
-        ['core/heading', { placeholder: 'Joe and Jane Bloggs // Wedding location' }],
         ['core/image', { className: 'no-padding' }],
     ] ]
 ];
@@ -15,7 +14,7 @@ const BLOCK_TEMPLATE = [
 registerBlockType('tlf-plugins/video-container', {
     // built-in attributes
     title: 'Video',
-    description: 'Add a video container. Full sized image with a play button, when clicked the video opens out and starts to play in a pop-up.',
+    description: 'Add a vdeo with a placeholder image and a play button. When clicked the video opens out and starts to play in a pop-up.',
     icon: 'format-video',
     category: 'thelostfoundry',
 
@@ -24,8 +23,11 @@ registerBlockType('tlf-plugins/video-container', {
       vimeoId: {
         type: 'string',
         default: '586578142'
-      }
-
+      },
+      containerHeight: {
+        type: 'string',
+        default: 'full-screen'
+      },
     },
 
     // built-in functions
@@ -34,6 +36,9 @@ registerBlockType('tlf-plugins/video-container', {
       // custom functions
       function onVimeoIdChange( videoIdValue ) {
         setAttributes( { vimeoId: videoIdValue } )
+      }
+      function onSetContainerHeight( containerHeightValue ) {
+        setAttributes( { containerHeight: containerHeightValue } );
       }
 
       return ([
@@ -45,6 +50,19 @@ registerBlockType('tlf-plugins/video-container', {
                 value={ attributes.vimeoId }
                 onChange={ onVimeoIdChange }/>
             </PanelRow>
+            <PanelRow>
+                <SelectControl
+                  label="Media size"
+                  value={ attributes.containerHeight }
+                  options={[
+                    { label: 'Full screen', value: 'full-screen' },
+                    { label: '3/4 height', value: 'three-quarter-height' },
+                    { label: '1/2 height', value: 'half-height' },
+                    { label: '1/4 height', value: 'one-quarter-height' },
+                  ]}
+                  onChange={ onSetContainerHeight }
+                />
+              </PanelRow>
           </PanelBody>
         </InspectorControls>,
 
@@ -65,10 +83,9 @@ registerBlockType('tlf-plugins/video-container', {
     save: ({ attributes }) => {
 
       return (
-        <div class="video-container-with-popup" data-vimeo-id={attributes.vimeoId}>
+        <div class="video-container-with-popup" data-vimeo-id={attributes.vimeoId} data-vimeo-height={attributes.containerHeight}>
             <InnerBlocks.Content />
             <div class="play-icon"><i class="fa-solid fa-play"></i></div>
-            <div class="click-to-play">Click to play</div>
             <div class="vimeo-container">
               <div class="close-video"><i class="fa-solid fa-xmark"></i> Close</div>
               <iframe src={"https://player.vimeo.com/video/" + attributes.vimeoId } width="100%" height="100%" frameborder="0" id={"vimeo_" + attributes.vimeoId} webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>

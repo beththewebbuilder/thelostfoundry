@@ -57,7 +57,7 @@ body {
   background-color: #262626;
   color: white;
   display: none;
-  z-index: 100;
+  z-index: 10;
 }
 .mobile-nav-page .close-nav {
   position: absolute;
@@ -100,6 +100,59 @@ body {
 }
 .mobile-nav-page .navigation-items .social-media .social-link:hover {
   color: #F30529;
+}
+
+.video-container-with-popup {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.video-container-with-popup .wp-block-group {
+  position: relative;
+  cursor: pointer;
+}
+.video-container-with-popup .wp-block-group .wp-block-image {
+  height: 90vh;
+}
+.video-container-with-popup .wp-block-group .wp-block-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-container-with-popup .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+  color: white;
+}
+.video-container-with-popup .vimeo-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 5%;
+  z-index: 11;
+}
+.video-container-with-popup .vimeo-container iframe {
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+.video-container-with-popup .vimeo-container .close-video {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+.video-container-with-popup .vimeo-container .close-video:hover {
+  cursor: pointer;
+}
+.video-container-with-popup iframe {
+  display: none;
 }
 
 footer {

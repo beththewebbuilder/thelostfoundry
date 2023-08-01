@@ -111,9 +111,7 @@ const {
 
 // inner content settings
 const ALLLOWED_BLOCKS = ['core/group'];
-const BLOCK_TEMPLATE = [['core/group', {}, [['core/heading', {
-  placeholder: 'Joe and Jane Bloggs // Wedding location'
-}], ['core/image', {
+const BLOCK_TEMPLATE = [['core/group', {}, [['core/image', {
   className: 'no-padding'
 }]]]];
 
@@ -121,7 +119,7 @@ const BLOCK_TEMPLATE = [['core/group', {}, [['core/heading', {
 registerBlockType('tlf-plugins/video-container', {
   // built-in attributes
   title: 'Video',
-  description: 'Add a video container. Full sized image with a play button, when clicked the video opens out and starts to play in a pop-up.',
+  description: 'Add a vdeo with a placeholder image and a play button. When clicked the video opens out and starts to play in a pop-up.',
   icon: 'format-video',
   category: 'thelostfoundry',
   // custom attributes
@@ -129,6 +127,10 @@ registerBlockType('tlf-plugins/video-container', {
     vimeoId: {
       type: 'string',
       default: '586578142'
+    },
+    containerHeight: {
+      type: 'string',
+      default: 'full-screen'
     }
   },
   // built-in functions
@@ -142,6 +144,11 @@ registerBlockType('tlf-plugins/video-container', {
         vimeoId: videoIdValue
       });
     }
+    function onSetContainerHeight(containerHeightValue) {
+      setAttributes({
+        containerHeight: containerHeightValue
+      });
+    }
     return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InspectorControls, {
       style: {
         marginBottom: '40px'
@@ -152,6 +159,23 @@ registerBlockType('tlf-plugins/video-container', {
       label: "Vimeo video Id",
       value: attributes.vimeoId,
       onChange: onVimeoIdChange
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
+      label: "Media size",
+      value: attributes.containerHeight,
+      options: [{
+        label: 'Full screen',
+        value: 'full-screen'
+      }, {
+        label: '3/4 height',
+        value: 'three-quarter-height'
+      }, {
+        label: '1/2 height',
+        value: 'half-height'
+      }, {
+        label: '1/4 height',
+        value: 'one-quarter-height'
+      }],
+      onChange: onSetContainerHeight
     })))),
     // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -171,14 +195,13 @@ registerBlockType('tlf-plugins/video-container', {
   }) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "video-container-with-popup",
-      "data-vimeo-id": attributes.vimeoId
+      "data-vimeo-id": attributes.vimeoId,
+      "data-vimeo-height": attributes.containerHeight
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "play-icon"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       class: "fa-solid fa-play"
     })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "click-to-play"
-    }, "Click to play"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "vimeo-container"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "close-video"

@@ -13,4 +13,43 @@ $(document).ready(function() {
             'marginTop': "-=100vh"
         });
     });
+
+    // video block add background grey
+    $(".video-container-with-popup").each(function() {
+        $(this).find(".wp-block-image").css("height", getHeightFromDataAttr($(this).attr('data-vimeo-height')));
+        var figureHtml = $(this).find(".wp-block-image").html();
+        $(this).find(".wp-block-image").html(figureHtml + "<div class='overlay-fade' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);'></div>");
+    });
+
+    // open video modal on click
+    $(".video-container-with-popup").click(function() {
+        $(this).find(".vimeo-container").css("display", "block");
+        var iframe = $(this).find("iframe");
+        var player = new Vimeo.Player(iframe);
+        player.play();
+    });
+    $(".vimeo-container").click(function(event) {
+        event.stopPropagation();
+        var iframe = $(this).find("iframe")[0];
+        var player = new Vimeo.Player(iframe);
+        player.pause();
+        $(this).css("display", "none");
+    });
 });
+
+function getHeightFromDataAttr(dataAttr){
+    switch(dataAttr) {
+        case 'full-screen':
+            return '100vh';
+        case 'ninty-five-percent-height':
+            return '95vh';
+        case 'three-quarter-height':
+            return '75vh';
+        case 'half-height':
+            return '50vh';
+        case 'one-quarter-height':
+            return '25vh';
+        default:
+            return 'auto';
+    }
+}
