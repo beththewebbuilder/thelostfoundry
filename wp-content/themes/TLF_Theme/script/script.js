@@ -14,6 +14,14 @@ $(document).ready(function() {
         });
     });
 
+    // start all carousel's moving
+    $('.carousel-container').each(function() {
+        setSlickCarousel(this);
+    });
+    $('.review-carousel-container').each(function() {
+        setSlickCarousel(this);
+    });
+
     // video block add background grey
     $(".video-container-with-popup").each(function() {
         $(this).find(".wp-block-image").css("height", getHeightFromDataAttr($(this).attr('data-vimeo-height')));
@@ -38,7 +46,14 @@ $(document).ready(function() {
 
     // autoplay video
     $(".autoplay-video").each(function() {
+        $(this).css("height", getHeightFromDataAttr($(this).attr('data-video-height')));
         $(this).find(".wp-block-video video").css("height", getHeightFromDataAttr($(this).attr('data-video-height')));
+    });
+
+    // quad button
+    $(".quad-image-button-item").each(function() {
+        var buttonText = $(this).find(".wp-block-button__link").html();
+        $(this).find(".wp-block-button__link").html('<div class="button-text" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:90%;">'+ buttonText +'</div>');
     })
 });
 

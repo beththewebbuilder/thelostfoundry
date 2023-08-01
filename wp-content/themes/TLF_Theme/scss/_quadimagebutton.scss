@@ -1,7 +1,7 @@
 .quad-image-button-group {
 
     .quad-image-button-item {
-        height: 100%;
+        height: 35vh;
         position: relative;
 
         figure {
@@ -25,6 +25,11 @@
                 text-transform: uppercase;
                 font-size: 2.5rem;
                 font-weight: bold;
+
+                &:hover {
+                    color: $primary-red;
+                    background-color: rgba(0,0,0,0.8);
+                }
             }
         }
     }

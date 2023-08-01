@@ -24,6 +24,8 @@ function styles_scripts_init() {
     //enqueue stylesheets
     wp_register_script('script', get_template_directory_uri() . '/script/script.js', array('jquery'),'',true);
     wp_enqueue_script('script');
+    wp_register_script('carousel-script', get_template_directory_uri() . '/script/carousel-script.js', array('jquery'),'',true);
+    wp_enqueue_script('carousel-script');
     wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
 
     // ajax

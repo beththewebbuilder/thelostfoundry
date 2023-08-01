@@ -39,6 +39,12 @@ function custom_gutenburg_blocks()
     generateRegisterScriptText($pluginFolder, "autoplay_video", "autoplay-video");
     // content container
     generateRegisterScriptText($pluginFolder, "content_container", "content-container");
+    // quad image button
+    generateRegisterScriptText($pluginFolder, "quad_image_button", "quad-image-button");
+    // review carousel
+    generateRegisterScriptText($pluginFolder, "review_carousel", "review-carousel");
+    // review item
+    generateRegisterScriptText($pluginFolder, "review_item", "review-item");
 
 }
 add_action('init', 'custom_gutenburg_blocks');

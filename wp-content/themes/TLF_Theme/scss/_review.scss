@@ -1,0 +1,32 @@
+.review-carousel-container {
+    width: 85vw;
+    margin: auto;
+
+    .slider-content {
+        .slick-arrow {
+            z-index: $z-index-carousel-arrow;
+            font-size: 2rem;
+    
+            &.slick-prev {
+                left: -1rem;
+            }
+            &.slick-next {
+                right: -1rem;
+            }
+    
+            &:before {
+                content: '';
+            }
+        }
+    }
+}
+.review-container {
+    padding: 2rem;
+    color: $primary-grey;
+
+    .reviewer-name {
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: left;
+    }
+}
