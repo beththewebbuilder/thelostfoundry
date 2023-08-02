@@ -83,9 +83,9 @@ module.exports = window["wp"]["element"];
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*******************************************!*\
-  !*** ./custom_plugins/video_container.js ***!
-  \*******************************************/
+/*!**********************************************!*\
+  !*** ./custom_plugins/carousel_container.js ***!
+  \**********************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
@@ -111,26 +111,52 @@ const {
 
 // inner content settings
 const ALLLOWED_BLOCKS = ['core/group'];
-const BLOCK_TEMPLATE = [['core/group', {}, [['core/image', {
-  className: 'no-padding'
+const BLOCK_TEMPLATE = [['core/group', {
+  className: "slider-content"
+}, [['core/image', {
+  className: "no-padding"
 }]]]];
 
 //'namespace/block-slug'
-registerBlockType('tlf-plugins/video-container', {
+registerBlockType('tlf-plugins/carousel-container', {
   // built-in attributes
-  title: 'Video',
-  description: 'Add a vdeo with a placeholder image and a play button. When clicked the video opens out and starts to play in a pop-up.',
-  icon: 'format-video',
+  title: 'Image Caroursel',
+  description: 'Vertical scrolling carousel of images',
+  icon: 'images-alt',
   category: 'thelostfoundry',
   // custom attributes
   attributes: {
-    vimeoId: {
-      type: 'string',
-      default: '586578142'
+    showArrows: {
+      type: 'boolean',
+      default: true
     },
-    containerHeight: {
+    autoScroll: {
+      type: 'boolean',
+      default: false
+    },
+    scrollTime: {
+      type: 'number',
+      default: 2000
+    },
+    pauseScrollOnHover: {
+      type: 'boolean',
+      default: false
+    },
+    imageSize: {
+      type: 'boolean',
+      default: false
+    },
+    imageHeight: {
       type: 'string',
-      default: 'full-screen'
+      default: 'one-quarter-height'
+    },
+    scrollArrowColour: {
+      type: 'string',
+      default: '#ffffff'
+    },
+    imagesToShow: {
+      type: 'number',
+      default: 1
     }
   },
   // built-in functions
@@ -139,14 +165,39 @@ registerBlockType('tlf-plugins/video-container', {
     setAttributes
   }) => {
     // custom functions
-    function onVimeoIdChange(videoIdValue) {
+    function onChangeShowArrows(showArrowsValue) {
       setAttributes({
-        vimeoId: videoIdValue
+        showArrows: showArrowsValue
       });
     }
-    function onSetContainerHeight(containerHeightValue) {
+    function onChangeAutoScroll(autoScrollValue) {
       setAttributes({
-        containerHeight: containerHeightValue
+        autoScroll: autoScrollValue
+      });
+    }
+    function onChangeScrollTime(scrollTimeValue) {
+      setAttributes({
+        scrollTime: parseInt(scrollTimeValue)
+      });
+    }
+    function onChangeHoverPause(pauseScrollValue) {
+      setAttributes({
+        pauseScrollOnHover: pauseScrollValue
+      });
+    }
+    function onSetImageHeight(imageHeight) {
+      setAttributes({
+        imageHeight: imageHeight
+      });
+    }
+    function onArrowColourChange(newColour) {
+      setAttributes({
+        scrollArrowColour: newColour
+      });
+    }
+    function onChangeImagesToShow(imagesToShowValue) {
+      setAttributes({
+        imagesToShow: parseInt(imagesToShowValue)
       });
     }
     return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InspectorControls, {
@@ -154,17 +205,59 @@ registerBlockType('tlf-plugins/video-container', {
         marginBottom: '40px'
       }
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelBody, {
-      title: 'Video Settings'
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TextControl, {
-      label: "Vimeo video Id",
-      value: attributes.vimeoId,
-      onChange: onVimeoIdChange
+      title: 'Carousel Settings'
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(CheckboxControl, {
+      label: "Show arrows",
+      checked: attributes.showArrows,
+      onChange: onChangeShowArrows
+    })), attributes.showArrows && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+      class: "custom-label"
+    }, "Select an arrow colour"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(ColorPalette, {
+      label: "Arrow scroll colour",
+      value: attributes.scrollArrowColour,
+      onChange: onArrowColourChange
+    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(CheckboxControl, {
+      label: "Auto scroll elements",
+      checked: attributes.autoScroll,
+      onChange: onChangeAutoScroll
+    })), attributes.autoScroll && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TextControl, {
+      label: "Auto scroll autoplay speed (ms)",
+      value: attributes.scrollTime,
+      type: "number",
+      onChange: onChangeScrollTime
+    })), attributes.autoScroll && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(CheckboxControl, {
+      label: "Pause scroll on hover",
+      checked: attributes.pauseScrollOnHover,
+      onChange: onChangeHoverPause
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
+      label: "Slides to show",
+      value: attributes.imagesToShow,
+      options: [{
+        label: '1',
+        value: 1
+      }, {
+        label: '2',
+        value: 2
+      }, {
+        label: '3',
+        value: 3
+      }, {
+        label: '4',
+        value: 4
+      }, {
+        label: '5',
+        value: 5
+      }],
+      onChange: onChangeImagesToShow
     })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
       label: "Media size",
-      value: attributes.containerHeight,
+      value: attributes.imageHeight,
       options: [{
         label: 'Full screen',
         value: 'full-screen'
+      }, {
+        label: '19/20 height',
+        value: 'ninty-five-percent-height'
       }, {
         label: '3/4 height',
         value: 'three-quarter-height'
@@ -175,17 +268,15 @@ registerBlockType('tlf-plugins/video-container', {
         label: '1/4 height',
         value: 'one-quarter-height'
       }],
-      onChange: onSetContainerHeight
-    })))),
-    // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
-    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "video-container custom-block"
+      onChange: onSetImageHeight
+    })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "carousel-container-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Video.png"
+      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Carousel.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,
-      templateLock: "all",
+      templateLock: false,
       templateInsertUpdatesSelection: false,
       renderAppender: InnerBlocks.DefaultBlockAppender
     }))];
@@ -194,34 +285,19 @@ registerBlockType('tlf-plugins/video-container', {
     attributes
   }) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "video-container-with-popup",
-      "data-vimeo-id": attributes.vimeoId,
-      "data-vimeo-height": attributes.containerHeight
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "play-icon center-transform"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      class: "fa-solid fa-play"
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "vimeo-container"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "close-video"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      class: "fa-solid fa-xmark"
-    }), " Close"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
-      src: "https://player.vimeo.com/video/" + attributes.vimeoId,
-      width: "100%",
-      height: "100%",
-      frameborder: "0",
-      id: "vimeo_" + attributes.vimeoId,
-      webkitallowfullscreen: true,
-      mozallowfullscreen: true,
-      allowfullscreen: true,
-      allow: "autoplay"
-    })));
+      class: "carousel-container",
+      "data-show-arrows": attributes.showArrows,
+      "data-auto-scroll": attributes.autoScroll,
+      "data-scroll-time": attributes.scrollTime,
+      "data-pause-scroll": attributes.pauseScrollOnHover,
+      "data-image-size": attributes.imageHeight,
+      "data-arrow-colour": attributes.scrollArrowColour,
+      "data-images-to-show": attributes.imagesToShow
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null));
   }
 });
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=video_container.js.map
+//# sourceMappingURL=carousel_container.js.map

@@ -12,7 +12,7 @@ const BLOCK_TEMPLATE = [
 ];
 
 //'namespace/block-slug'
-registerBlockType('jfv-plugins/content', {
+registerBlockType('tlf-plugins/content', {
     // built-in attributes
     title: 'Content Container',
     description: 'Add content to the page with a gap along the sides. All content such as images and text should be inside this container.',

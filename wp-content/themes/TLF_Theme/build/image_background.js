@@ -83,9 +83,9 @@ module.exports = window["wp"]["element"];
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*********************************************!*\
-  !*** ./custom_plugins/content_container.js ***!
-  \*********************************************/
+/*!********************************************!*\
+  !*** ./custom_plugins/image_background.js ***!
+  \********************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
@@ -111,34 +111,72 @@ const {
 
 // inner content settings
 const ALLLOWED_BLOCKS = ['core/group'];
-const BLOCK_TEMPLATE = [['core/group', {}, [['core/heading'], ['core/paragraph']]]];
+const BLOCK_TEMPLATE = [['core/group', {}, [['core/image', {
+  className: 'no-padding'
+}], ['core/group', {
+  className: 'image-background-content absolute-cover'
+}, [['core/group', {
+  className: 'content-center center-transform'
+}, [['core/heading'], ['core/button']]]]]]]];
 
 //'namespace/block-slug'
-registerBlockType('tlf-plugins/content', {
+registerBlockType('tlf-plugins/image-background', {
   // built-in attributes
-  title: 'Content Container',
-  description: 'Add content to the page with a gap along the sides. All content such as images and text should be inside this container.',
+  title: 'Image Background with Button',
+  description: 'A full width image as background with a heading and button on the top.',
   icon: 'editor-insertmore',
   category: 'thelostfoundry',
   // custom attributes
-  attributes: {},
+  attributes: {
+    containerHeight: {
+      type: 'string',
+      default: 'one-quarter-height'
+    }
+  },
   // built-in functions
   edit: ({
     attributes,
     setAttributes
   }) => {
     // custom functions
-
-    return [
+    function onSetContainerHeight(containerHeightValue) {
+      setAttributes({
+        containerHeight: containerHeightValue
+      });
+    }
+    return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InspectorControls, {
+      style: {
+        marginBottom: '40px'
+      }
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelBody, {
+      title: 'Image Container Settings'
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
+      label: "Media size",
+      value: attributes.containerHeight,
+      options: [{
+        label: 'Full screen',
+        value: 'full-screen'
+      }, {
+        label: '3/4 height',
+        value: 'three-quarter-height'
+      }, {
+        label: '1/2 height',
+        value: 'half-height'
+      }, {
+        label: '1/4 height',
+        value: 'one-quarter-height'
+      }],
+      onChange: onSetContainerHeight
+    })))),
     // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "content-container-block custom-block"
+      class: "image-background-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Content.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,
-      templateLock: false,
+      templateLock: "all",
       templateInsertUpdatesSelection: false,
       renderAppender: InnerBlocks.DefaultBlockAppender
     }))];
@@ -147,7 +185,8 @@ registerBlockType('tlf-plugins/content', {
     attributes
   }) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "container content-container"
+      class: "image-background",
+      "data-container-height": attributes.containerHeight
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null));
   }
 });
@@ -155,4 +194,4 @@ registerBlockType('tlf-plugins/content', {
 
 /******/ })()
 ;
-//# sourceMappingURL=content_container.js.map
+//# sourceMappingURL=image_background.js.map

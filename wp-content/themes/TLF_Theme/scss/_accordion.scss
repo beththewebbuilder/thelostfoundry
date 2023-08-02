@@ -1,0 +1,14 @@
+.accordion {
+    border-bottom: 1px solid $light-grey;
+
+    .accordion-collapse {
+        margin-top: 2rem;
+    }
+    .accordion-button {
+        font-size: inherit;   
+        &:not(.collapsed) {
+            background-color: $lighter-grey;
+            color: $primary-grey;
+        }
+    }
+}

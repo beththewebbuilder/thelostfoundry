@@ -24,3 +24,14 @@
     border-color: #EF7C35;
     background-color: #EFAA7F;
 }
+
+.image-background-block {
+    .components-resizable-box__container {
+        width: 100% !important;
+        img {
+            height: 10rem;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

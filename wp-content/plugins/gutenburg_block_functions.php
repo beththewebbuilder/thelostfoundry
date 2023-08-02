@@ -45,6 +45,12 @@ function custom_gutenburg_blocks()
     generateRegisterScriptText($pluginFolder, "review_carousel", "review-carousel");
     // review item
     generateRegisterScriptText($pluginFolder, "review_item", "review-item");
+    // image background
+    generateRegisterScriptText($pluginFolder, "image_background", "image-background");
+    // accordian dropdown
+    generateRegisterScriptText($pluginFolder, "accordian_dropdown", "accordian-dropdown");
+    // carousel container
+    generateRegisterScriptText($pluginFolder, "carousel_container", "carousel-container");
 
 }
 add_action('init', 'custom_gutenburg_blocks');

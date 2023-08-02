@@ -25,4 +25,13 @@
   background-color: #EFAA7F;
 }
 
+.image-background-block .components-resizable-box__container {
+  width: 100% !important;
+}
+.image-background-block .components-resizable-box__container img {
+  height: 10rem;
+  width: 100%;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=plugin.css.map */

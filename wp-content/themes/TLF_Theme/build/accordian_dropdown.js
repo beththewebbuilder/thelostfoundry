@@ -83,9 +83,9 @@ module.exports = window["wp"]["element"];
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*********************************************!*\
-  !*** ./custom_plugins/content_container.js ***!
-  \*********************************************/
+/*!**********************************************!*\
+  !*** ./custom_plugins/accordian_dropdown.js ***!
+  \**********************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
@@ -111,28 +111,49 @@ const {
 
 // inner content settings
 const ALLLOWED_BLOCKS = ['core/group'];
-const BLOCK_TEMPLATE = [['core/group', {}, [['core/heading'], ['core/paragraph']]]];
+const BLOCK_TEMPLATE = [['core/group', {}, [['core/paragraph', {
+  className: 'dropdown-text-content container'
+}], ['tlf-plugins/carousel-container'], ['tlf-plugins/video-container']]]];
 
 //'namespace/block-slug'
-registerBlockType('tlf-plugins/content', {
+registerBlockType('tlf-plugins/accordian-dropdown', {
   // built-in attributes
-  title: 'Content Container',
+  title: 'Dropdown Container',
   description: 'Add content to the page with a gap along the sides. All content such as images and text should be inside this container.',
   icon: 'editor-insertmore',
   category: 'thelostfoundry',
   // custom attributes
-  attributes: {},
+  attributes: {
+    dropdownTitle: {
+      type: 'string',
+      default: ''
+    }
+  },
   // built-in functions
   edit: ({
     attributes,
     setAttributes
   }) => {
     // custom functions
-
-    return [
+    function onSetDropdownTitle(dropdownTitleValue) {
+      setAttributes({
+        dropdownTitle: dropdownTitleValue
+      });
+    }
+    return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InspectorControls, {
+      style: {
+        marginBottom: '40px'
+      }
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelBody, {
+      title: 'Dropdown Title'
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TextControl, {
+      label: "Dropdown Title",
+      value: attributes.dropdownTitle,
+      onChange: onSetDropdownTitle
+    })))),
     // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "content-container-block custom-block"
+      class: "accordion-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Content.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
@@ -147,12 +168,30 @@ registerBlockType('tlf-plugins/content', {
     attributes
   }) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "container content-container"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null));
+      class: "accordion accordion-flush",
+      id: "accordion" + attributes.dropdownTitle.replace(/\ /g, "")
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "accordion-item"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      class: "accordion-header",
+      id: "heading-" + attributes.dropdownTitle.replace(/\ /g, "")
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      class: "accordion-button collapsed",
+      type: "button",
+      "data-bs-toggle": "collapse",
+      "data-bs-target": "#collapse-" + attributes.dropdownTitle.replace(/\ /g, ""),
+      "aria-expanded": "false",
+      "aria-controls": "collapse-" + attributes.dropdownTitle.replace(/\ /g, "")
+    }, attributes.dropdownTitle)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      id: "collapse-" + attributes.dropdownTitle.replace(/\ /g, ""),
+      class: "accordion-collapse collapse",
+      "aria-labelledby": "heading-" + attributes.dropdownTitle.replace(/\ /g, ""),
+      "data-bs-parent": "#accordion" + attributes.dropdownTitle.replace(/\ /g, "")
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null))));
   }
 });
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=content_container.js.map
+//# sourceMappingURL=accordian_dropdown.js.map

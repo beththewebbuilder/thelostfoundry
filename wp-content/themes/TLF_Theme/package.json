@@ -8,7 +8,7 @@
     "build:scripts": "wp-scripts build",
     "project-sass": "sass --watch scss/style.scss style.css",
     "plugin-sass": "sass --watch custom_plugins/style/plugin.scss custom_plugins/style/plugin.css",
-    "dev": "concurrently \"wp-scripts start custom_plugins/video_container.js custom_plugins/autoplay_video.js custom_plugins/content_container.js custom_plugins/quad_image_button.js custom_plugins/review_carousel.js custom_plugins/review_item.js --output-path=build\" \"npm run plugin-sass\" \"npm run project-sass\""
+    "dev": "concurrently \"wp-scripts start custom_plugins/video_container.js custom_plugins/autoplay_video.js custom_plugins/content_container.js custom_plugins/quad_image_button.js custom_plugins/review_carousel.js custom_plugins/review_item.js custom_plugins/image_background.js custom_plugins/accordian_dropdown.js custom_plugins/carousel_container.js --output-path=build\" \"npm run plugin-sass\" \"npm run project-sass\""
     },
     "author": "build'n'bloom",
     "license": "ISC",

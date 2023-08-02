@@ -1,19 +1,19 @@
 .mobile-nav-icon {
     background-color: $primary-grey;
     position: fixed;
-    left: -5rem;
-    top: -5rem;
-    width: 15rem;
-    height: 15rem;
+    left: -4rem;
+    top: -4rem;
+    width: 10rem;
+    height: 10rem;
     color: white;
     border-radius: 50%;
     z-index: $mobile-navigation-z-index;
 
     .icon {
         color: white;
-        font-size: 4rem;
-        top: 6.5rem;
-        left: 7.5rem;
+        font-size: 2.5rem;
+        top: 4.5rem;
+        left: 5.5rem;
         position: absolute;
     }
 
@@ -36,9 +36,9 @@
 
     .close-nav {
         position: absolute;
-        left: 5rem;
-        top: 5rem;
-        font-size: 4rem;
+        left: 3rem;
+        top: 3rem;
+        font-size: 2.5rem;
 
         &:hover {
             -webkit-transform: scale(1.2);
@@ -63,7 +63,8 @@
             a {
                 color: white;
                 font-family: $adventure-font;
-                font-size: 3rem;
+                font-size: 2rem;
+                text-decoration: none;
                 &:hover {
                     color: $primary-red;
                 }
@@ -73,9 +74,10 @@
         .social-media {
             margin-top: 5rem;
             .social-link {
-                font-size: 3rem;
+                font-size: 2rem;
                 color: white;
                 margin-left: 1rem;
+                text-decoration: none;
 
                 &:hover {
                     color: $primary-red;

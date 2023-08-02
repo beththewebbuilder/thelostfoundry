@@ -25,6 +25,7 @@ $(document).ready(function() {
     // video block add background grey
     $(".video-container-with-popup").each(function() {
         $(this).find(".wp-block-image").css("height", getHeightFromDataAttr($(this).attr('data-vimeo-height')));
+        $(this).css("height", getHeightFromDataAttr($(this).attr('data-vimeo-height')));
         var figureHtml = $(this).find(".wp-block-image").html();
         $(this).find(".wp-block-image").html(figureHtml + "<div class='overlay-fade' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);'></div>");
     });
@@ -54,7 +55,12 @@ $(document).ready(function() {
     $(".quad-image-button-item").each(function() {
         var buttonText = $(this).find(".wp-block-button__link").html();
         $(this).find(".wp-block-button__link").html('<div class="button-text" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:90%;">'+ buttonText +'</div>');
-    })
+    });
+
+    // image background container
+    $(".image-background").each(function() {
+        $(this).find(".wp-block-image").css("height", getHeightFromDataAttr($(this).attr("data-container-height")));
+    });
 });
 
 function getHeightFromDataAttr(dataAttr){

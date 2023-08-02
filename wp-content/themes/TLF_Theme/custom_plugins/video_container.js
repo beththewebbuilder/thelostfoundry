@@ -85,7 +85,7 @@ registerBlockType('tlf-plugins/video-container', {
       return (
         <div class="video-container-with-popup" data-vimeo-id={attributes.vimeoId} data-vimeo-height={attributes.containerHeight}>
             <InnerBlocks.Content />
-            <div class="play-icon"><i class="fa-solid fa-play"></i></div>
+            <div class="play-icon center-transform"><i class="fa-solid fa-play"></i></div>
             <div class="vimeo-container">
               <div class="close-video"><i class="fa-solid fa-xmark"></i> Close</div>
               <iframe src={"https://player.vimeo.com/video/" + attributes.vimeoId } width="100%" height="100%" frameborder="0" id={"vimeo_" + attributes.vimeoId} webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>
