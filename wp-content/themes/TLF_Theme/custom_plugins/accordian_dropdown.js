@@ -5,10 +5,10 @@ const { PanelBody, PanelRow, TextControl, SelectControl, CheckboxControl } = wp.
 // inner content settings
 const ALLLOWED_BLOCKS = ['core/group'];
 const BLOCK_TEMPLATE = [
-  ['core/group', {}, [
-    ['core/paragraph', { className: 'dropdown-text-content container' }],
-    ['tlf-plugins/carousel-container'],
-    ['tlf-plugins/video-container'],
+  ['core/group', { className: 'accordian-content-flex'}, [
+    ['core/paragraph', { className: 'dropdown-text-content' }],
+    ['tlf-plugins/carousel-container', { className: 'image-carousel' }],
+    ['tlf-plugins/video-container', { className: 'video-container' }],
   ] ]
 ];
 
@@ -73,7 +73,9 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
                     </button>
                 </h3> 
                 <div id={"collapse-" + attributes.dropdownTitle.replace(/\ /g, "")} class="accordion-collapse collapse" aria-labelledby={"heading-" + attributes.dropdownTitle.replace(/\ /g, "")} data-bs-parent={"#accordion" + attributes.dropdownTitle.replace(/\ /g, "")}>
+                  <div class="container">
                     <InnerBlocks.Content />
+                  </div>
                 </div>
             </div>
         </div>

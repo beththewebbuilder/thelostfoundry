@@ -3,12 +3,42 @@
 
     .accordion-collapse {
         margin-top: 2rem;
+
+        @media screen and (min-width: $sml-screen-size) {
+            .accordian-content-flex {
+                display: flex;
+                flex-flow: wrap;
+    
+                > * {
+                    min-width: 50%;
+                }
+    
+                .dropdown-text-content {
+                    width: 100%;
+                }
+                .carousel-container {
+                    flex: 1;
+                }
+                .video-container-with-popup {
+                    flex: 1;
+                    margin: 0;
+                }
+            }
+        }
     }
     .accordion-button {
         font-size: inherit;   
         &:not(.collapsed) {
             background-color: $lighter-grey;
             color: $primary-grey;
+        }
+    }
+}
+
+.image-accordion {
+    .accordion-header {
+        img {
+            width: 100%;
         }
     }
 }

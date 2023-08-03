@@ -1270,9 +1270,11 @@ figure.wp-block-image.height-100.match-width {
   position: fixed;
   width: 100%;
   z-index: 4;
+  top: 0;
+  left: 0;
 }
 @media screen and (max-width: 767px) {
-  .desktop-nav {
+  .desktop-nav.navbar {
     display: none;
   }
 }
@@ -1289,6 +1291,43 @@ figure.wp-block-image.height-100.match-width {
 }
 .desktop-nav .navbar-nav li a:hover {
   color: #F30529;
+}
+
+.accordion {
+  border-bottom: 1px solid #c2c2c2;
+}
+.accordion .accordion-collapse {
+  margin-top: 2rem;
+}
+@media screen and (min-width: 767px) {
+  .accordion .accordion-collapse .accordian-content-flex {
+    display: flex;
+    flex-flow: wrap;
+  }
+  .accordion .accordion-collapse .accordian-content-flex > * {
+    min-width: 50%;
+  }
+  .accordion .accordion-collapse .accordian-content-flex .dropdown-text-content {
+    width: 100%;
+  }
+  .accordion .accordion-collapse .accordian-content-flex .carousel-container {
+    flex: 1;
+  }
+  .accordion .accordion-collapse .accordian-content-flex .video-container-with-popup {
+    flex: 1;
+    margin: 0;
+  }
+}
+.accordion .accordion-button {
+  font-size: inherit;
+}
+.accordion .accordion-button:not(.collapsed) {
+  background-color: #f2f2f2;
+  color: #262626;
+}
+
+.image-accordion .accordion-header img {
+  width: 100%;
 }
 
 .video-container-with-popup {
@@ -1432,20 +1471,6 @@ figure.wp-block-image.height-100.match-width {
 }
 .carousel-container .slider-content .slick-arrow.slick-next {
   right: 2rem;
-}
-
-.accordion {
-  border-bottom: 1px solid #c2c2c2;
-}
-.accordion .accordion-collapse {
-  margin-top: 2rem;
-}
-.accordion .accordion-button {
-  font-size: inherit;
-}
-.accordion .accordion-button:not(.collapsed) {
-  background-color: #f2f2f2;
-  color: #262626;
 }
 
 footer {

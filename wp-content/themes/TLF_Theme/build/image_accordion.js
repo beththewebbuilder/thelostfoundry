@@ -83,9 +83,9 @@ module.exports = window["wp"]["element"];
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!**********************************************!*\
-  !*** ./custom_plugins/accordian_dropdown.js ***!
-  \**********************************************/
+/*!*******************************************!*\
+  !*** ./custom_plugins/image_accordion.js ***!
+  \*******************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
@@ -111,20 +111,14 @@ const {
 
 // inner content settings
 const ALLLOWED_BLOCKS = ['core/group'];
-const BLOCK_TEMPLATE = [['core/group', {
-  className: 'accordian-content-flex'
-}, [['core/paragraph', {
+const BLOCK_TEMPLATE = [['core/group', {}, [['core/paragraph', {
   className: 'dropdown-text-content'
-}], ['tlf-plugins/carousel-container', {
-  className: 'image-carousel'
-}], ['tlf-plugins/video-container', {
-  className: 'video-container'
-}]]]];
+}], ['tlf-plugins/carousel-container'], ['tlf-plugins/video-container']]]];
 
 //'namespace/block-slug'
-registerBlockType('tlf-plugins/accordian-dropdown', {
+registerBlockType('tlf-plugins/image-accordion', {
   // built-in attributes
-  title: 'Dropdown Container',
+  title: 'Image Dropdown',
   description: 'Add content to the page with a gap along the sides. All content such as images and text should be inside this container.',
   icon: 'editor-insertmore',
   category: 'thelostfoundry',
@@ -133,6 +127,14 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
     dropdownTitle: {
       type: 'string',
       default: ''
+    },
+    image_url: {
+      type: 'string',
+      default: null
+    },
+    image_id: {
+      type: 'number',
+      default: 0
     }
   },
   // built-in functions
@@ -146,6 +148,18 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
         dropdownTitle: dropdownTitleValue
       });
     }
+    function onSetImage(image) {
+      setAttributes({
+        image_url: image.url,
+        image_id: image.id
+      });
+    }
+    function clearImage() {
+      setAttributes({
+        image_id: 0,
+        image_url: ''
+      });
+    }
     return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InspectorControls, {
       style: {
         marginBottom: '40px'
@@ -156,7 +170,29 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
       label: "Dropdown Title",
       value: attributes.dropdownTitle,
       onChange: onSetDropdownTitle
-    })))),
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+      class: "custom-label"
+    }, "Image"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), attributes.image_id != 0 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "selected-media-container"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      class: "panel-display-image",
+      src: attributes.image_url
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(MediaUploadCheck, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(MediaUpload, {
+      title: 'Select background image',
+      value: attributes.image_id,
+      onSelect: onSetImage,
+      allowedTypes: ['image'],
+      render: ({
+        open
+      }) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+        onClick: open,
+        isDefault: true,
+        isLarge: true
+      }, attributes.image_id == 0 ? 'Choose an image' : 'Replace image')
+    })), attributes.image_id != 0 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      onClick: clearImage,
+      class: "reset-image-btn"
+    }, "Clear"))),
     // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "accordion-block custom-block"
@@ -174,11 +210,11 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
     attributes
   }) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "accordion accordion-flush",
+      class: "accordion image-accordion accordion-flush",
       id: "accordion" + attributes.dropdownTitle.replace(/\ /g, "")
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "accordion-item"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "accordion-header",
       id: "heading-" + attributes.dropdownTitle.replace(/\ /g, "")
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
@@ -188,7 +224,11 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
       "data-bs-target": "#collapse-" + attributes.dropdownTitle.replace(/\ /g, ""),
       "aria-expanded": "false",
       "aria-controls": "collapse-" + attributes.dropdownTitle.replace(/\ /g, "")
-    }, attributes.dropdownTitle)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, (attributes.link_url == '' || attributes.link_url == null) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: attributes.image_url
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "dropdown-title"
+    }, attributes.dropdownTitle))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       id: "collapse-" + attributes.dropdownTitle.replace(/\ /g, ""),
       class: "accordion-collapse collapse",
       "aria-labelledby": "heading-" + attributes.dropdownTitle.replace(/\ /g, ""),
@@ -202,4 +242,4 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
 
 /******/ })()
 ;
-//# sourceMappingURL=accordian_dropdown.js.map
+//# sourceMappingURL=image_accordion.js.map

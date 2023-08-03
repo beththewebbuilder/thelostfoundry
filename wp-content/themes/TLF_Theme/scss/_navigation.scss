@@ -98,10 +98,12 @@
         position: fixed;
         width: 100%;
         z-index: $desktop-navbar-z-index;
-    }
+        top: 0;
+        left: 0;
 
-    @media screen and (max-width: $sml-screen-size) {
-        display: none;
+        @media screen and (max-width: $sml-screen-size) {
+            display: none;
+        }
     }
 
     img {
