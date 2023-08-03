@@ -1,6 +1,14 @@
 .accordion {
     border-bottom: 1px solid $light-grey;
 
+    .accordion-header {
+        &:not(.image-accordian-drop) {
+            img {
+                display: none;
+            }
+        }
+    }
+
     .accordion-collapse {
         margin-top: 2rem;
 

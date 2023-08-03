@@ -49,8 +49,6 @@ function custom_gutenburg_blocks()
     generateRegisterScriptText($pluginFolder, "image_background", "image-background");
     // accordian dropdown
     generateRegisterScriptText($pluginFolder, "accordian_dropdown", "accordian-dropdown");
-    // image accordion
-    generateRegisterScriptText($pluginFolder, "image_accordion", "image-accordion");
     // carousel container
     generateRegisterScriptText($pluginFolder, "carousel_container", "carousel-container");
 

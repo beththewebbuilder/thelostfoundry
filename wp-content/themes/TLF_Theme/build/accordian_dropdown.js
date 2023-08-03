@@ -133,6 +133,18 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
     dropdownTitle: {
       type: 'string',
       default: ''
+    },
+    showImageDropdown: {
+      type: 'boolean',
+      default: false
+    },
+    image_url: {
+      type: 'string',
+      default: null
+    },
+    image_id: {
+      type: 'number',
+      default: 0
     }
   },
   // built-in functions
@@ -146,6 +158,23 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
         dropdownTitle: dropdownTitleValue
       });
     }
+    function onChangeShowImage(showImageDropdownValue) {
+      setAttributes({
+        showImageDropdown: showImageDropdownValue
+      });
+    }
+    function onSetImage(image) {
+      setAttributes({
+        image_url: image.url,
+        image_id: image.id
+      });
+    }
+    function clearImage() {
+      setAttributes({
+        image_id: 0,
+        image_url: ''
+      });
+    }
     return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InspectorControls, {
       style: {
         marginBottom: '40px'
@@ -156,7 +185,33 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
       label: "Dropdown Title",
       value: attributes.dropdownTitle,
       onChange: onSetDropdownTitle
-    })))),
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(CheckboxControl, {
+      label: "Show image as dropdown",
+      checked: attributes.showImageDropdown,
+      onChange: onChangeShowImage
+    })), attributes.showImageDropdown && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+      class: "custom-label"
+    }, "Image"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), attributes.image_id != 0 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "selected-media-container"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      class: "panel-display-image",
+      src: attributes.image_url
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(MediaUploadCheck, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(MediaUpload, {
+      title: 'Select background image',
+      value: attributes.image_id,
+      onSelect: onSetImage,
+      allowedTypes: ['image'],
+      render: ({
+        open
+      }) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+        onClick: open,
+        isDefault: true,
+        isLarge: true
+      }, attributes.image_id == 0 ? 'Choose an image' : 'Replace image')
+    })), attributes.image_id != 0 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      onClick: clearImage,
+      class: "reset-image-btn"
+    }, "Clear")))),
     // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "accordion-block custom-block"
@@ -179,7 +234,7 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "accordion-item"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-      class: "accordion-header",
+      class: "accordion-header" + (attributes.showImageDropdown ? " image-accordian-drop" : ""),
       id: "heading-" + attributes.dropdownTitle.replace(/\ /g, "")
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
       class: "accordion-button collapsed",
@@ -188,7 +243,11 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
       "data-bs-target": "#collapse-" + attributes.dropdownTitle.replace(/\ /g, ""),
       "aria-expanded": "false",
       "aria-controls": "collapse-" + attributes.dropdownTitle.replace(/\ /g, "")
-    }, attributes.dropdownTitle)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, (attributes.link_url == '' || attributes.link_url == null) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: attributes.image_url
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "dropdown-title"
+    }, attributes.dropdownTitle))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       id: "collapse-" + attributes.dropdownTitle.replace(/\ /g, ""),
       class: "accordion-collapse collapse",
       "aria-labelledby": "heading-" + attributes.dropdownTitle.replace(/\ /g, ""),

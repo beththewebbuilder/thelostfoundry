@@ -1296,6 +1296,9 @@ figure.wp-block-image.height-100.match-width {
 .accordion {
   border-bottom: 1px solid #c2c2c2;
 }
+.accordion .accordion-header:not(.image-accordian-drop) img {
+  display: none;
+}
 .accordion .accordion-collapse {
   margin-top: 2rem;
 }
