@@ -1,5 +1,9 @@
 body {
     font-family: $regular-font;
+
+    @media screen and (min-width: $sml-screen-size) {
+        padding-top: $desktop-nav-height;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -71,6 +75,23 @@ figure {
             border-color: $primary-red;
         }
     }
+}
+
+.btn {
+    &.btn-custom {
+        background-color: white;
+        color: $primary-grey;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 4px;
+        border: 2px solid $light-grey;
+    
+        &:hover {
+            text-decoration: none;
+            color: $primary-red;
+            border-color: $primary-red;
+        }
+    }   
 }
 
 .content-container {

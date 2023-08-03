@@ -53,6 +53,8 @@ function custom_gutenburg_blocks()
     generateRegisterScriptText($pluginFolder, "carousel_container", "carousel-container");
     // faq
     generateRegisterScriptText($pluginFolder, "faq_item", "faq-item");
+    // contact form
+    generateRegisterScriptText($pluginFolder, "contact_form", "contact-form");
 
 }
 add_action('init', 'custom_gutenburg_blocks');

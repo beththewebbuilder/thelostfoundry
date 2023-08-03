@@ -1,0 +1,66 @@
+.contact-form-container {
+    margin-bottom: 4rem;
+    
+    .form-group {
+        margin-bottom: 2rem;
+
+        label {
+            font-weight: normal;
+        }   
+        input, textarea, select {
+            border: none;
+            box-shadow: none;
+            border-bottom: 1px solid $light-grey;
+            border-radius: 0;
+        }
+        .contact-names {
+            input {
+                width: 27rem;
+                display: inline-block;
+
+                @media screen and (max-width: $sml-screen-size) {
+                    width: 100%;
+                }
+            }
+            .name-and {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                display: inline-block;
+
+                @media screen and (max-width: $sml-screen-size) {
+                    display: block;
+                    text-align: center;
+                    padding-top: 1rem;
+                }
+            }
+        }
+
+        &#help-input {
+            display: none;
+        }
+    }
+
+    .error-msg, .success-msg, .sending-email, .sent-email {
+        display: none;
+    }
+    .error-msg, .success-msg {
+        border-radius: 5px;
+        padding: .5rem;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        background-color: $red-fade;
+        color: $primary-red;
+        border: 1px solid $primary-red;
+        font-weight: bold;
+        text-align: center;
+
+        a {
+            color: $primary-red;
+        }
+    }
+    .success-msg {
+        background-color: $green-fade;
+        color: $green;
+        border-color: $green;
+    }
+}

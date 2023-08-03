@@ -12,7 +12,6 @@ footer {
         }
     }
     .social-media {
-
         .social-link {
             font-size: 3rem;
             margin-left: 1rem;
@@ -24,5 +23,13 @@ footer {
         &:hover {
             color: $primary-red;
         }
+    }
+    .contact-details {
+        a {
+            text-decoration: none;
+        }
+    }
+    .website-author, .website-author a {
+        color: $dark-grey;
     }
 }

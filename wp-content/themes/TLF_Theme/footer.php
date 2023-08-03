@@ -5,6 +5,10 @@
     <div class="copyright">
         &#169; <?php echo date("Y")?> The Lost Foundry
     </div>
+    <div class="contact-details">
+        <a href="tel:07500 288685">07500 288685</a> |
+        <a href="mailto:rich@thelostfoundry.co.uk">rich@thelostfoundry.co.uk</a>
+    </div>
     <div class="social-media">
         <a class="social-link" href="https://www.facebook.com/Studiolife91/">
             <i class="fab fa-facebook-square"></i>
