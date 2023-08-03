@@ -1,39 +1,112 @@
 .accordion {
     border-bottom: 1px solid $light-grey;
 
+    &.image-accordian-flex {
+        @media screen and (min-width: $sml-screen-size) {
+            display: inline-block;
+            width: 25vw;
+
+            .accordion-collapse {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                z-index: $video-modal-z-index;
+                overflow: auto;
+                padding: 3rem;
+
+                .container {
+                    background-color: $primary-grey;
+                    color: white;
+
+                    .large-screen-title {
+                        font-family: $adventure-font;
+                        font-size: 2rem;
+                    }
+                    .close-modal {
+                        text-align: center;
+                        font-family: $adventure-font;
+                        cursor: pointer;
+                        &:hover {
+                            color: $primary-red;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: $sml-screen-size) {
+            .large-screen-title, .close-modal {
+                display: none;
+            }
+        }
+    }
+
     .accordion-header {
         &:not(.image-accordian-drop) {
             img {
                 display: none;
             }
         }
-    }
+        &.image-accordian-drop {
+            .accordion-button {
+                position: relative;
+                padding: 0;
 
-    .accordion-collapse {
-        margin-top: 2rem;
-
-        @media screen and (min-width: $sml-screen-size) {
-            .accordian-content-flex {
-                display: flex;
-                flex-flow: wrap;
-    
-                > * {
-                    min-width: 50%;
-                }
-    
-                .dropdown-text-content {
+                img {
                     width: 100%;
                 }
-                .carousel-container {
-                    flex: 1;
+                .dropdown-title {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    height: 5rem;
+                    padding: 1rem;
+                    text-align: center;
+                    background-color: rgba(0,0,0,0.5);
+                    color: white;
                 }
-                .video-container-with-popup {
-                    flex: 1;
-                    margin: 0;
+                &:after {
+                    display: none;   
                 }
             }
         }
     }
+
+    &:not(.image-accordian-flex) {
+        .accordion-collapse {
+            margin-top: 2rem;
+    
+            @media screen and (min-width: $sml-screen-size) {
+                .accordian-content-flex {
+                    display: flex;
+                    flex-flow: wrap;
+        
+                    > * {
+                        min-width: 50%;
+                    }
+        
+                    .dropdown-text-content {
+                        width: 100%;
+                    }
+                    .carousel-container {
+                        flex: 1;
+                    }
+                    .video-container-with-popup {
+                        flex: 1;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .large-screen-title, .close-modal {
+                display: none;
+            }
+        }
+    }
+
     .accordion-button {
         font-size: inherit;   
         &:not(.collapsed) {

@@ -124,7 +124,7 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
     save: ({ attributes }) => {
 
       return (
-        <div class="accordion accordion-flush" id={"accordion" + attributes.dropdownTitle.replace(/\ /g, "")}>
+        <div class={"accordion accordion-flush" + (attributes.showImageDropdown ? " image-accordian-flex" : "")} id={"accordion" + attributes.dropdownTitle.replace(/\ /g, "")}>
             <div class="accordion-item">
                 <h3 class={"accordion-header" + (attributes.showImageDropdown ? " image-accordian-drop" : "")} id={"heading-" + attributes.dropdownTitle.replace(/\ /g, "")}>
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse-" + attributes.dropdownTitle.replace(/\ /g, "")} aria-expanded="false" aria-controls={"collapse-" + attributes.dropdownTitle.replace(/\ /g, "")}>
@@ -137,6 +137,8 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
                 </h3> 
                 <div id={"collapse-" + attributes.dropdownTitle.replace(/\ /g, "")} class="accordion-collapse collapse" aria-labelledby={"heading-" + attributes.dropdownTitle.replace(/\ /g, "")} data-bs-parent={"#accordion" + attributes.dropdownTitle.replace(/\ /g, "")}>
                   <div class="container">
+                    <div class="close-modal"><i class="fa-solid fa-xmark"></i> Close</div>
+                    <div class="large-screen-title">{attributes.dropdownTitle}</div>
                     <InnerBlocks.Content />
                   </div>
                 </div>

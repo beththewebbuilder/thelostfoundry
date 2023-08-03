@@ -229,7 +229,7 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
     attributes
   }) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "accordion accordion-flush",
+      class: "accordion accordion-flush" + (attributes.showImageDropdown ? " image-accordian-flex" : ""),
       id: "accordion" + attributes.dropdownTitle.replace(/\ /g, "")
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "accordion-item"
@@ -254,7 +254,13 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
       "data-bs-parent": "#accordion" + attributes.dropdownTitle.replace(/\ /g, "")
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "container"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null)))));
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "close-modal"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      class: "fa-solid fa-xmark"
+    }), " Close"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "large-screen-title"
+    }, attributes.dropdownTitle), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null)))));
   }
 });
 })();

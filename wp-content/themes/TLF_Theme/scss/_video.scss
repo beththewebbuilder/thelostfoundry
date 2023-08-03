@@ -38,10 +38,10 @@
         }
         .close-video {
             text-align: center;
-            color: white;
-            font-size: 2rem;
+            font-family: $adventure-font;
+            cursor: pointer;
             &:hover {
-                cursor: pointer;
+                color: $primary-red;
             }
         }
     }

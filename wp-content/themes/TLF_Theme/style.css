@@ -1296,30 +1296,92 @@ figure.wp-block-image.height-100.match-width {
 .accordion {
   border-bottom: 1px solid #c2c2c2;
 }
+@media screen and (min-width: 767px) {
+  .accordion.image-accordian-flex {
+    display: inline-block;
+    width: 25vw;
+  }
+  .accordion.image-accordian-flex .accordion-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    overflow: auto;
+    padding: 3rem;
+  }
+  .accordion.image-accordian-flex .accordion-collapse .container {
+    background-color: #262626;
+    color: white;
+  }
+  .accordion.image-accordian-flex .accordion-collapse .container .large-screen-title {
+    font-family: "Adventure", Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+  }
+  .accordion.image-accordian-flex .accordion-collapse .container .close-modal {
+    text-align: center;
+    font-family: "Adventure", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+  }
+  .accordion.image-accordian-flex .accordion-collapse .container .close-modal:hover {
+    color: #F30529;
+  }
+}
+@media screen and (max-width: 767px) {
+  .accordion.image-accordian-flex .large-screen-title, .accordion.image-accordian-flex .close-modal {
+    display: none;
+  }
+}
 .accordion .accordion-header:not(.image-accordian-drop) img {
   display: none;
 }
-.accordion .accordion-collapse {
+.accordion .accordion-header.image-accordian-drop .accordion-button {
+  position: relative;
+  padding: 0;
+}
+.accordion .accordion-header.image-accordian-drop .accordion-button img {
+  width: 100%;
+}
+.accordion .accordion-header.image-accordian-drop .accordion-button .dropdown-title {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 5rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.accordion .accordion-header.image-accordian-drop .accordion-button:after {
+  display: none;
+}
+.accordion:not(.image-accordian-flex) .accordion-collapse {
   margin-top: 2rem;
 }
 @media screen and (min-width: 767px) {
-  .accordion .accordion-collapse .accordian-content-flex {
+  .accordion:not(.image-accordian-flex) .accordion-collapse .accordian-content-flex {
     display: flex;
     flex-flow: wrap;
   }
-  .accordion .accordion-collapse .accordian-content-flex > * {
+  .accordion:not(.image-accordian-flex) .accordion-collapse .accordian-content-flex > * {
     min-width: 50%;
   }
-  .accordion .accordion-collapse .accordian-content-flex .dropdown-text-content {
+  .accordion:not(.image-accordian-flex) .accordion-collapse .accordian-content-flex .dropdown-text-content {
     width: 100%;
   }
-  .accordion .accordion-collapse .accordian-content-flex .carousel-container {
+  .accordion:not(.image-accordian-flex) .accordion-collapse .accordian-content-flex .carousel-container {
     flex: 1;
   }
-  .accordion .accordion-collapse .accordian-content-flex .video-container-with-popup {
+  .accordion:not(.image-accordian-flex) .accordion-collapse .accordian-content-flex .video-container-with-popup {
     flex: 1;
     margin: 0;
   }
+}
+.accordion:not(.image-accordian-flex) .accordion-collapse .large-screen-title, .accordion:not(.image-accordian-flex) .accordion-collapse .close-modal {
+  display: none;
 }
 .accordion .accordion-button {
   font-size: inherit;
@@ -1373,11 +1435,11 @@ figure.wp-block-image.height-100.match-width {
 }
 .video-container-with-popup .vimeo-container .close-video {
   text-align: center;
-  color: white;
-  font-size: 2rem;
+  font-family: "Adventure", Arial, Helvetica, sans-serif;
+  cursor: pointer;
 }
 .video-container-with-popup .vimeo-container .close-video:hover {
-  cursor: pointer;
+  color: #F30529;
 }
 .video-container-with-popup iframe {
   display: none;

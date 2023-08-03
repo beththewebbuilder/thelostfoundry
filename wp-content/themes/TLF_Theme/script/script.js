@@ -61,6 +61,11 @@ $(document).ready(function() {
     $(".image-background").each(function() {
         $(this).find(".wp-block-image").css("height", getHeightFromDataAttr($(this).attr("data-container-height")));
     });
+
+    // accordion modal
+    $(".accordion .close-modal").click(function() {
+        $(this).parents(".accordion-collapse").removeClass("show");
+    });
 });
 
 function getHeightFromDataAttr(dataAttr){
