@@ -125,8 +125,8 @@ const BLOCK_TEMPLATE = [['core/group', {
 registerBlockType('tlf-plugins/accordian-dropdown', {
   // built-in attributes
   title: 'Dropdown Container',
-  description: 'Add content to the page with a gap along the sides. All content such as images and text should be inside this container.',
-  icon: 'editor-insertmore',
+  description: 'Add content inside a dropdown, this can just have a title or an image as well.',
+  icon: 'arrow-down-alt2',
   category: 'thelostfoundry',
   // custom attributes
   attributes: {
@@ -216,7 +216,7 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "accordion-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Content.png"
+      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Dropdown-Container.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,
