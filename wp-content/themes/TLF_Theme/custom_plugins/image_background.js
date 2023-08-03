@@ -20,7 +20,7 @@ registerBlockType('tlf-plugins/image-background', {
     // built-in attributes
     title: 'Image Background with Button',
     description: 'A full width image as background with a heading and button on the top.',
-    icon: 'editor-insertmore',
+    icon: 'format-image',
     category: 'thelostfoundry',
 
     // custom attributes
@@ -60,7 +60,7 @@ registerBlockType('tlf-plugins/image-background', {
 
         // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
         <div class="image-background-block custom-block">
-          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Content.png"/>
+          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Image-Button.png"/>
           <InnerBlocks 
             allowedBlocks={ ALLLOWED_BLOCKS } 
             template={ BLOCK_TEMPLATE } 

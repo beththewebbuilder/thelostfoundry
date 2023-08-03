@@ -124,7 +124,7 @@ registerBlockType('tlf-plugins/image-background', {
   // built-in attributes
   title: 'Image Background with Button',
   description: 'A full width image as background with a heading and button on the top.',
-  icon: 'editor-insertmore',
+  icon: 'format-image',
   category: 'thelostfoundry',
   // custom attributes
   attributes: {
@@ -172,7 +172,7 @@ registerBlockType('tlf-plugins/image-background', {
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "image-background-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Content.png"
+      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Image-Button.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,
