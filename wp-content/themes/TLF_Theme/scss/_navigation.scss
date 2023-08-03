@@ -9,6 +9,10 @@
     border-radius: 50%;
     z-index: $mobile-navigation-z-index;
 
+    @media screen and (min-width: $sml-screen-size) {
+        display: none;
+    }
+
     .icon {
         color: white;
         font-size: 2.5rem;
@@ -78,6 +82,40 @@
                 color: white;
                 margin-left: 1rem;
                 text-decoration: none;
+
+                &:hover {
+                    color: $primary-red;
+                }
+            }
+        }
+    }
+}
+
+.desktop-nav {
+    background-color: $primary-grey;
+
+    &.navbar {
+        position: fixed;
+        width: 100%;
+        z-index: $desktop-navbar-z-index;
+    }
+
+    @media screen and (max-width: $sml-screen-size) {
+        display: none;
+    }
+
+    img {
+        height: 4rem;
+    }
+
+    .navbar-nav {
+        li {
+            padding: 1rem;
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 1.2rem;
 
                 &:hover {
                     color: $primary-red;

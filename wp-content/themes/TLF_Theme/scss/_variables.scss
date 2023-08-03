@@ -21,5 +21,13 @@ $lighter-grey: #f2f2f2;
 // Z-INDEX
 $z-index-carousel-arrow: 1;
 $mobile-navigation-z-index: 2;
-$mobile-navigation-page-z-index: 10;
-$video-modal-z-index: 11;
+$mobile-navigation-page-z-index: 3;
+$desktop-navbar-z-index: 4;
+$video-modal-z-index: 5;
+
+// SCREEN HEIGHTS
+$extra-small-screen: 383px;
+$tiny-small-screen: 347px;
+$sml-screen-size: 767px;
+$lrg-laptop-screen: 1440px;
+$laptop-screen: 1024px;
