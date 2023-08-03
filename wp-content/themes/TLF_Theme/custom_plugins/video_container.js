@@ -67,7 +67,7 @@ registerBlockType('tlf-plugins/video-container', {
         </InspectorControls>,
 
         // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
-        <div class="video-container custom-block">
+        <div class="video-container-block custom-block">
           <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Video.png"/>
           <InnerBlocks 
             allowedBlocks={ ALLLOWED_BLOCKS } 

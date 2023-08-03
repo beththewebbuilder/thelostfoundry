@@ -11,8 +11,8 @@ const BLOCK_TEMPLATE = [
 //'namespace/block-slug'
 registerBlockType('tlf-plugins/autoplay-video', {
     // built-in attributes
-    title: 'Autoplay Video',
-    description: 'Add a short local video to autoplay on page load. Originally designed to go at the top of the homepage. This should be imported as a small file.',
+    title: 'Full Width Local Video',
+    description: 'Add a video uploaded to the media library on page load. Originally designed to go at the top of the homepage. This should be imported as a small file.',
     icon: 'video-alt3',
     category: 'thelostfoundry',
 
@@ -53,7 +53,7 @@ registerBlockType('tlf-plugins/autoplay-video', {
 
         // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
         <div class="autoplay-video-container-block custom-block">
-          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Video.png"/>
+          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Local-Video.png"/>
           <InnerBlocks 
             allowedBlocks={ ALLLOWED_BLOCKS } 
             template={ BLOCK_TEMPLATE } 

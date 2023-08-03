@@ -116,8 +116,8 @@ const BLOCK_TEMPLATE = [['core/video']];
 //'namespace/block-slug'
 registerBlockType('tlf-plugins/autoplay-video', {
   // built-in attributes
-  title: 'Autoplay Video',
-  description: 'Add a short local video to autoplay on page load. Originally designed to go at the top of the homepage. This should be imported as a small file.',
+  title: 'Full Width Local Video',
+  description: 'Add a video uploaded to the media library on page load. Originally designed to go at the top of the homepage. This should be imported as a small file.',
   icon: 'video-alt3',
   category: 'thelostfoundry',
   // custom attributes
@@ -166,7 +166,7 @@ registerBlockType('tlf-plugins/autoplay-video', {
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "autoplay-video-container-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Video.png"
+      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Local-Video.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,
