@@ -141,7 +141,7 @@ const BLOCK_TEMPLATE = [['core/columns', {}, [['core/column', {}, [['core/group'
 registerBlockType('jfv-plugins/quad-image-button', {
   // built-in attributes
   title: 'Quad Image Buttons',
-  description: 'Add content to the page with a gap along the sides. All content such as images and text should be inside this container.',
+  description: 'Add 4 different buttons/links with image backgrounds',
   icon: 'grid-view',
   category: 'thelostfoundry',
   // custom attributes
@@ -158,7 +158,7 @@ registerBlockType('jfv-plugins/quad-image-button', {
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "quad-image-button-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Content.png"
+      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Quad-Image-Button.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,

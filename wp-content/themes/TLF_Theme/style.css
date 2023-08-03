@@ -22,14 +22,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Adventure", Arial, Helvetica, sans-serif !important;
 }
 
-h1 {
-  font-size: calc(1.325rem + 4vw) !important;
-}
-
-h2 {
-  font-size: calc(1.325rem + 3vw) !important;
-}
-
 .center-transform {
   position: absolute;
   top: 50%;
@@ -50,7 +42,7 @@ h2 {
   width: 100%;
 }
 
-figure {
+figure:note(.aligncenter) {
   margin: 0 !important;
 }
 figure.wp-block-image:not(.no-padding) {

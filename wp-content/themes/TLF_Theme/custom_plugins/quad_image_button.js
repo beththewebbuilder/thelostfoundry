@@ -33,7 +33,7 @@ const BLOCK_TEMPLATE = [
 registerBlockType('jfv-plugins/quad-image-button', {
     // built-in attributes
     title: 'Quad Image Buttons',
-    description: 'Add content to the page with a gap along the sides. All content such as images and text should be inside this container.',
+    description: 'Add 4 different buttons/links with image backgrounds',
     icon: 'grid-view',
     category: 'thelostfoundry',
 
@@ -49,7 +49,7 @@ registerBlockType('jfv-plugins/quad-image-button', {
       return ([
         // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
         <div class="quad-image-button-block custom-block">
-          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Content.png"/>
+          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Quad-Image-Button.png"/>
           <InnerBlocks 
             allowedBlocks={ ALLLOWED_BLOCKS } 
             template={ BLOCK_TEMPLATE } 
