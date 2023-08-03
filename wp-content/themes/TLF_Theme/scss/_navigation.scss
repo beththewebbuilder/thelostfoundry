@@ -55,7 +55,7 @@
         width: 85vw;
 
         .logo {
-            height: 6rem;
+            height: 4rem;
             margin-bottom: 2rem;
             img {
                 height: 100%;
@@ -69,7 +69,7 @@
             a {
                 color: white;
                 font-family: $adventure-font;
-                font-size: 2rem;
+                font-size: 1.7rem;
                 text-decoration: none;
                 &:hover {
                     color: $primary-red;
@@ -78,7 +78,7 @@
         }
 
         .social-media {
-            margin-top: 5rem;
+            margin-top: 2rem;
             .social-link {
                 font-size: 2rem;
                 color: white;

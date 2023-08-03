@@ -1244,7 +1244,7 @@ figure.wp-block-image.height-100.match-width {
   width: 85vw;
 }
 .mobile-nav-page .navigation-items .logo {
-  height: 6rem;
+  height: 4rem;
   margin-bottom: 2rem;
 }
 .mobile-nav-page .navigation-items .logo img {
@@ -1257,14 +1257,14 @@ figure.wp-block-image.height-100.match-width {
 .mobile-nav-page .navigation-items li a {
   color: white;
   font-family: "Adventure", Arial, Helvetica, sans-serif;
-  font-size: 2rem;
+  font-size: 1.7rem;
   text-decoration: none;
 }
 .mobile-nav-page .navigation-items li a:hover {
   color: #F30529;
 }
 .mobile-nav-page .navigation-items .social-media {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 .mobile-nav-page .navigation-items .social-media .social-link {
   font-size: 2rem;
@@ -1515,6 +1515,7 @@ figure.wp-block-image.height-100.match-width {
 .review-carousel-container {
   width: 85vw;
   margin: auto;
+  overflow: hidden;
 }
 .review-carousel-container .slider-content .slick-arrow {
   z-index: 1;
@@ -1540,6 +1541,9 @@ figure.wp-block-image.height-100.match-width {
   text-align: left;
 }
 
+.carousel-container {
+  overflow: hidden;
+}
 .carousel-container img {
   object-fit: cover;
   width: 100%;
