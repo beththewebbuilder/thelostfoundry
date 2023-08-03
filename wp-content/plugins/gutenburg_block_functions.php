@@ -51,6 +51,8 @@ function custom_gutenburg_blocks()
     generateRegisterScriptText($pluginFolder, "accordian_dropdown", "accordian-dropdown");
     // carousel container
     generateRegisterScriptText($pluginFolder, "carousel_container", "carousel-container");
+    // faq
+    generateRegisterScriptText($pluginFolder, "faq_item", "faq-item");
 
 }
 add_action('init', 'custom_gutenburg_blocks');
