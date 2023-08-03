@@ -31,7 +31,7 @@ registerBlockType('tlf-plugins/review-item', {
       return ([
         // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
         <div class="review-container-block custom-block">
-          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Review-Item.png"/>
+          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Review-Item.png"/>
           <InnerBlocks 
             allowedBlocks={ ALLLOWED_BLOCKS } 
             template={ BLOCK_TEMPLATE } 

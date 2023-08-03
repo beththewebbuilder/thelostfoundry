@@ -140,7 +140,7 @@ registerBlockType('tlf-plugins/review-item', {
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "review-container-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Review-Item.png"
+      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Review-Item.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,
