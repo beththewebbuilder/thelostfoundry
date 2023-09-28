@@ -3,7 +3,7 @@ Theme Name: The Lost Foundry Theme
 Author: Bethany Fowler
 Author URI: https://bethanyfowler.me/
 Description: Styled theme for The Lost Foundry company website - initially created in August 2023
-Version: 1.0.2
+Version: 1.1.0
 Text Domain: thelostfoundry
 */
 @font-face {
@@ -1313,7 +1313,7 @@ figure.wp-block-image.height-100.match-width {
 @media screen and (min-width: 767px) {
   .accordion.image-accordian-flex {
     display: inline-block;
-    width: 25vw;
+    width: 24.5vw;
   }
   .accordion.image-accordian-flex .accordion-collapse {
     position: fixed;
@@ -1329,14 +1329,15 @@ figure.wp-block-image.height-100.match-width {
   .accordion.image-accordian-flex .accordion-collapse .container {
     background-color: #262626;
     color: white;
+    padding: 2rem;
   }
   .accordion.image-accordian-flex .accordion-collapse .container .large-screen-title {
     font-family: "Adventure", Arial, Helvetica, sans-serif;
     font-size: 2rem;
   }
   .accordion.image-accordian-flex .accordion-collapse .container .close-modal {
-    text-align: center;
-    font-family: "Adventure", Arial, Helvetica, sans-serif;
+    text-align: right;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     cursor: pointer;
   }
   .accordion.image-accordian-flex .accordion-collapse .container .close-modal:hover {
@@ -1368,6 +1369,9 @@ figure.wp-block-image.height-100.match-width {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
+}
+.accordion .accordion-header.image-accordian-drop .accordion-button .dropdown-title .hover-text {
+  display: none;
 }
 .accordion .accordion-header.image-accordian-drop .accordion-button:after {
   display: none;
@@ -1403,6 +1407,27 @@ figure.wp-block-image.height-100.match-width {
 .accordion .accordion-button:not(.collapsed) {
   background-color: #f2f2f2;
   color: #262626;
+}
+.accordion:hover .accordion-header.image-accordian-drop .accordion-button .dropdown-title {
+  height: 100%;
+}
+.accordion:hover .accordion-header.image-accordian-drop .accordion-button .dropdown-title .title-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 767px) {
+  .accordion:hover .accordion-header.image-accordian-drop .accordion-button .dropdown-title .hover-text {
+    display: block;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    text-align: center;
+    left: 0;
+  }
 }
 
 .image-accordion .accordion-header img {
@@ -1548,6 +1573,9 @@ figure.wp-block-image.height-100.match-width {
 .carousel-container img {
   object-fit: cover;
   width: 100%;
+}
+.carousel-container .slider-content .slick-arrow {
+  z-index: 1;
 }
 .carousel-container .slider-content .slick-arrow.slick-prev {
   left: 2rem;

@@ -131,13 +131,14 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
                     {(attributes.link_url == '' || attributes.link_url == null) &&
                       <img src={attributes.image_url}/>}
                       <div class="dropdown-title">
-                        {attributes.dropdownTitle}
+                        <div class="title-container">{attributes.dropdownTitle}</div>
+                        <div class="hover-text">Click to find out more</div>
                       </div>
                     </button>
                 </h3> 
                 <div id={"collapse-" + attributes.dropdownTitle.replace(/\ /g, "")} class="accordion-collapse collapse" aria-labelledby={"heading-" + attributes.dropdownTitle.replace(/\ /g, "")} data-bs-parent={"#accordion" + attributes.dropdownTitle.replace(/\ /g, "")}>
                   <div class="container">
-                    <div class="close-modal"><i class="fa-solid fa-xmark"></i> Close</div>
+                    <div class="close-modal"><i class="fa-solid fa-xmark"></i></div>
                     <div class="large-screen-title">{attributes.dropdownTitle}</div>
                     <InnerBlocks.Content />
                   </div>

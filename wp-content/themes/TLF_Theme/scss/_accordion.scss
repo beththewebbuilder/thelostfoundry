@@ -4,7 +4,7 @@
     &.image-accordian-flex {
         @media screen and (min-width: $sml-screen-size) {
             display: inline-block;
-            width: 25vw;
+            width: 24.5vw;
 
             .accordion-collapse {
                 position: fixed;
@@ -20,14 +20,15 @@
                 .container {
                     background-color: $primary-grey;
                     color: white;
+                    padding: 2rem;
 
                     .large-screen-title {
                         font-family: $adventure-font;
                         font-size: 2rem;
                     }
                     .close-modal {
-                        text-align: center;
-                        font-family: $adventure-font;
+                        text-align: right;
+                        font-family: $regular-font;
                         cursor: pointer;
                         &:hover {
                             color: $primary-red;
@@ -67,6 +68,10 @@
                     text-align: center;
                     background-color: rgba(0,0,0,0.5);
                     color: white;
+
+                    .hover-text {
+                        display: none;
+                    }
                 }
                 &:after {
                     display: none;   
@@ -112,6 +117,36 @@
         &:not(.collapsed) {
             background-color: $lighter-grey;
             color: $primary-grey;
+        }
+    }
+
+    &:hover {
+        .accordion-header {
+            &.image-accordian-drop {
+                .accordion-button {
+                    .dropdown-title {
+                        height: 100%;
+                        .title-container {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        @media screen and (min-width: $sml-screen-size) {
+                            .hover-text {
+                                display: block;
+                                font-family: $regular-font;
+                                font-size: 1rem;
+                                position: absolute;
+                                bottom: 2rem;
+                                width: 100%;
+                                text-align: center;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -247,7 +247,11 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
       src: attributes.image_url
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "dropdown-title"
-    }, attributes.dropdownTitle))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "title-container"
+    }, attributes.dropdownTitle), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "hover-text"
+    }, "Click to find out more")))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       id: "collapse-" + attributes.dropdownTitle.replace(/\ /g, ""),
       class: "accordion-collapse collapse",
       "aria-labelledby": "heading-" + attributes.dropdownTitle.replace(/\ /g, ""),
@@ -258,7 +262,7 @@ registerBlockType('tlf-plugins/accordian-dropdown', {
       class: "close-modal"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       class: "fa-solid fa-xmark"
-    }), " Close"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "large-screen-title"
     }, attributes.dropdownTitle), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null)))));
   }
