@@ -51,6 +51,16 @@ registerBlockType('tlf-plugins/contact-form', {
             <div class="row">
                 <div class="col-md-6">
                 <InnerBlocks.Content />
+                <div class="contact-map">
+                    <iframe
+                        style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD_80g1ScQI5sCEb1vaTFJ2XxnO8ENn-ag
+                            &q=place_id:ChIJOe4AaEmGbUgRP4FKwrysWY0">
+                    </iframe>
+                </div>
                 </div>
                 <div class="col-md-6">
                     <form id="contactForm" method="POST">

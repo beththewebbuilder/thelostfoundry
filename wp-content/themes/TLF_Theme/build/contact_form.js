@@ -154,7 +154,15 @@ registerBlockType('tlf-plugins/contact-form', {
       class: "row"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "col-md-6"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "contact-map"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+      style: "border:0",
+      loading: "lazy",
+      allowfullscreen: true,
+      referrerpolicy: "no-referrer-when-downgrade",
+      src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyD_80g1ScQI5sCEb1vaTFJ2XxnO8ENn-ag\r &q=place_id:ChIJOe4AaEmGbUgRP4FKwrysWY0"
+    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "col-md-6"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
       id: "contactForm",

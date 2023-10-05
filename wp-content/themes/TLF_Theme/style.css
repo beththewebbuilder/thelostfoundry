@@ -1,9 +1,9 @@
 /*
 Theme Name: The Lost Foundry Theme
-Author: Bethany Fowler
+Author: Bethany Fowler  
 Author URI: https://bethanyfowler.me/
 Description: Styled theme for The Lost Foundry company website - initially created in August 2023
-Version: 1.1.0
+Version: 1.2.0
 Text Domain: thelostfoundry
 */
 @font-face {
@@ -1313,8 +1313,15 @@ figure.wp-block-image.height-100.match-width {
 @media screen and (min-width: 767px) {
   .accordion.image-accordian-flex {
     display: inline-block;
+    width: 49.5vw;
+  }
+}
+@media screen and (min-width: 767px) and (min-width: 1440px) {
+  .accordion.image-accordian-flex {
     width: 24.5vw;
   }
+}
+@media screen and (min-width: 767px) {
   .accordion.image-accordian-flex .accordion-collapse {
     position: fixed;
     top: 0;
@@ -1351,6 +1358,15 @@ figure.wp-block-image.height-100.match-width {
 }
 .accordion .accordion-header:not(.image-accordian-drop) img {
   display: none;
+}
+.accordion .accordion-header:not(.image-accordian-drop) .dropdown-title .hover-text {
+  font-size: 0.8rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-style: italic;
+  content: "Click to find out more";
+}
+.accordion .accordion-header:not(.image-accordian-drop) .accordian-button:not(.collapsed) .dropdown-title .hover-text {
+  content: "Click to show less";
 }
 .accordion .accordion-header.image-accordian-drop .accordion-button {
   position: relative;
@@ -1587,11 +1603,29 @@ figure.wp-block-image.height-100.match-width {
 .contact-form-container {
   margin-bottom: 4rem;
 }
+@media screen and (min-width: 1024px) {
+  .contact-form-container .col-md-6 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.contact-form-container .contact-map {
+  height: 50vh;
+}
+@media screen and (min-width: 1024px) {
+  .contact-form-container .contact-map {
+    height: 25vh;
+  }
+}
+.contact-form-container .contact-map iframe {
+  width: 100%;
+  height: 100%;
+}
 .contact-form-container .form-group {
   margin-bottom: 2rem;
 }
 .contact-form-container .form-group label {
-  font-weight: normal;
+  font-weight: 500;
 }
 .contact-form-container .form-group input, .contact-form-container .form-group textarea, .contact-form-container .form-group select {
   border: none;
@@ -1656,6 +1690,11 @@ footer .footer-logo {
   height: 10rem;
   margin-bottom: 1rem;
 }
+@media screen and (min-width: 767px) {
+  footer .footer-logo {
+    height: 4rem;
+  }
+}
 footer .footer-logo img {
   height: 100%;
 }
@@ -1663,6 +1702,11 @@ footer .social-media .social-link {
   font-size: 3rem;
   margin-left: 1rem;
   text-decoration: none;
+}
+@media screen and (min-width: 767px) {
+  footer .social-media .social-link {
+    font-size: 1.5rem;
+  }
 }
 footer a {
   color: #262626;

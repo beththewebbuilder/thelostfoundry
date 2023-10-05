@@ -4,7 +4,11 @@
     &.image-accordian-flex {
         @media screen and (min-width: $sml-screen-size) {
             display: inline-block;
-            width: 24.5vw;
+            width: 49.5vw;
+
+            @media screen and (min-width: $lrg-laptop-screen) {
+                width: 24.5vw;
+            }
 
             .accordion-collapse {
                 position: fixed;
@@ -48,6 +52,23 @@
         &:not(.image-accordian-drop) {
             img {
                 display: none;
+            }
+            .dropdown-title {
+                .hover-text {
+                    font-size: .8rem;
+                    font-family: $regular-font;
+                    font-style: italic;
+                    content: 'Click to find out more';
+                }
+            }
+            .accordian-button {
+                &:not(.collapsed) {
+                    .dropdown-title {
+                        .hover-text {
+                            content: 'Click to show less';
+                        }
+                    }
+                }
             }
         }
         &.image-accordian-drop {
