@@ -60,6 +60,11 @@ $(document).ready(function() {
     $(".accordion .close-modal").click(function() {
         $(this).parents(".accordion-collapse").removeClass("show");
     });
+
+    $(".accordion-button").click(function() {
+        var collapseContainer = $(this).attr('data-bs-target');
+        $(collapseContainer).find(".slick-slider")[0].slick.refresh();
+    })
 });
 
 function getHeightFromDataAttr(dataAttr){

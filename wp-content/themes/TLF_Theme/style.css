@@ -1483,22 +1483,29 @@ figure.wp-block-image.height-100.match-width {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  padding: 5%;
   z-index: 6;
 }
-.video-container-with-popup .video-container iframe {
+.video-container-with-popup .video-container .video-content-container {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+.video-container-with-popup .video-container .video-content-container iframe {
   display: block;
   margin: auto;
   height: 100%;
   width: 100%;
 }
-.video-container-with-popup .video-container .close-video {
+.video-container-with-popup .video-container .video-content-container .close-video {
   text-align: right;
   font-family: "Adventure", Arial, Helvetica, sans-serif;
   cursor: pointer;
   color: white;
+  font-size: 2rem;
 }
-.video-container-with-popup .video-container .close-video:hover {
+.video-container-with-popup .video-container .video-content-container .close-video:hover {
   color: #F30529;
 }
 .video-container-with-popup iframe {

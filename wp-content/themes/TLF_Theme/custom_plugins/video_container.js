@@ -22,7 +22,7 @@ registerBlockType('tlf-plugins/video-container', {
     attributes: {
       youTubeId: {
         type: 'string',
-        default: 'https://youtu.be/VkO_7eTE0hU?si=Rs9s5kpQhy8w54z9'
+        default: 'fAgwXjR-lRQ?si=R0R29rG2_zb2nOMb'
       },
       containerHeight: {
         type: 'string',
@@ -47,7 +47,7 @@ registerBlockType('tlf-plugins/video-container', {
           <PanelBody title={'Video Settings'}>
             <PanelRow>
                 <TextControl 
-                label="Vimeo video Id"
+                label="YouTube "
                 value={ attributes.youTubeId }
                 onChange={ onYouTubeIdChange }/>
             </PanelRow>
@@ -69,7 +69,7 @@ registerBlockType('tlf-plugins/video-container', {
 
         // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
         <div class="video-container-block custom-block">
-          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Video.png"/>
+          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/10/TLF-YouTube-Video.png"/>
           <InnerBlocks 
             allowedBlocks={ ALLLOWED_BLOCKS } 
             template={ BLOCK_TEMPLATE } 
@@ -88,10 +88,11 @@ registerBlockType('tlf-plugins/video-container', {
             <InnerBlocks.Content />
             <div class="play-icon center-transform"><i class="fa-solid fa-play"></i></div>
             <div class="video-container">
-              <div class="close-video"><i class="fa-solid fa-xmark"></i></div>
-              <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + attributes.youTubeId} id={"video_" + attributes.youTubeId} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <div class="video-content-container">
+                <div class="close-video"><i class="fa-solid fa-xmark"></i></div>
+                <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + attributes.youTubeId} id={"video_" + attributes.youTubeId} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
             </div>
-            
         </div>
       );
     }

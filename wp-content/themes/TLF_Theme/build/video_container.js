@@ -126,7 +126,7 @@ registerBlockType('tlf-plugins/video-container', {
   attributes: {
     youTubeId: {
       type: 'string',
-      default: 'https://youtu.be/VkO_7eTE0hU?si=Rs9s5kpQhy8w54z9'
+      default: 'fAgwXjR-lRQ?si=R0R29rG2_zb2nOMb'
     },
     containerHeight: {
       type: 'string',
@@ -157,7 +157,7 @@ registerBlockType('tlf-plugins/video-container', {
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelBody, {
       title: 'Video Settings'
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TextControl, {
-      label: "Vimeo video Id",
+      label: "YouTube ",
       value: attributes.youTubeId,
       onChange: onYouTubeIdChange
     })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
@@ -182,7 +182,7 @@ registerBlockType('tlf-plugins/video-container', {
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "video-container-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/07/JFV-Video.png"
+      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/10/TLF-YouTube-Video.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,
@@ -205,6 +205,8 @@ registerBlockType('tlf-plugins/video-container', {
     })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "video-container"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "video-content-container"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "close-video"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       class: "fa-solid fa-xmark"
@@ -217,7 +219,7 @@ registerBlockType('tlf-plugins/video-container', {
       frameborder: "0",
       allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
       allowfullscreen: true
-    })));
+    }))));
   }
 });
 })();
