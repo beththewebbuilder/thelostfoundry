@@ -1,6 +1,10 @@
 .image-background {
     position: relative;
 
+    figure {
+        margin-bottom: 0;
+    }
+
     &.background-top-bottom-padding {
         margin-top: 3rem;
         margin-bottom: 3rem;

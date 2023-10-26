@@ -60,6 +60,12 @@ figure {
     }
 }
 
+.wp-block-buttons {
+    &.buttons-centre {
+        text-align: center;
+    }
+}
+
 .wp-block-button {
     a {
         background-color: white;

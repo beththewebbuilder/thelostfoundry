@@ -33,15 +33,9 @@ $(document).ready(function() {
     // open video modal on click
     $(".video-container-with-popup").click(function() {
         $(this).find(".video-container").css("display", "block");
-        // var iframe = $(this).find("iframe");
-        // var player = new Vimeo.Player(iframe);
-        // player.play();
     });
     $(".video-container").click(function(event) {
         event.stopPropagation();
-        var iframe = $(this).find("iframe")[0];
-        // var player = new Vimeo.Player(iframe);
-        // player.pause();
         $(this).css("display", "none");
     });
 

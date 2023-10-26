@@ -1158,6 +1158,10 @@ figure.wp-block-image.height-100.match-width {
   width: 100vh;
 }
 
+.wp-block-buttons.buttons-centre {
+  text-align: center;
+}
+
 .wp-block-button a {
   background-color: white;
   color: #262626;
@@ -1538,6 +1542,9 @@ figure.wp-block-image.height-100.match-width {
 
 .image-background {
   position: relative;
+}
+.image-background figure {
+  margin-bottom: 0;
 }
 .image-background.background-top-bottom-padding {
   margin-top: 3rem;
