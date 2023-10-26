@@ -8,6 +8,14 @@ $page = get_posts([
 
 echo $page[0]->post_content;
 
+?>
+
+<div class="instagram-feed">
+    <?php echo do_shortcode('[instagram-feed feed=2]'); ?>
+</div>
+
+<?php
+
 get_footer(); 
 
 ?>
