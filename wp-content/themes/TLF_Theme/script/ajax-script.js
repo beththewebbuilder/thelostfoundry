@@ -11,7 +11,7 @@ $(document).ready(function(){
       var successMsg = $(".success-msg");
       var errorMsg = $(".error-msg");
 
-      var fieldsComplete = !checkAllFieldsComplete([name, secondName, email, weddingDate, location, message, captcha]);
+      var fieldsComplete = !checkAllFieldsComplete([name, email, message, captcha]);
       successMsg.hide();
       errorMsg.hide();
 

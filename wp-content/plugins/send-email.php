@@ -50,7 +50,7 @@ function sendEmail($subject_title, $email_content, $client_email) {
   
   $from = $client_email;
 
-  $email["to"] = "contact@jordanfowlervideography.co.uk";
+  $email["to"] = "bethany.c.fowler@gmail.com";
 
   $email["headers"] = getEmailHeaders($client_email);
 
