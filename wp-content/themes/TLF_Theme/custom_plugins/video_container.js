@@ -20,9 +20,9 @@ registerBlockType('tlf-plugins/video-container', {
 
     // custom attributes
     attributes: {
-      vimeoId: {
+      youTubeId: {
         type: 'string',
-        default: '586578142'
+        default: 'https://youtu.be/VkO_7eTE0hU?si=Rs9s5kpQhy8w54z9'
       },
       containerHeight: {
         type: 'string',
@@ -34,8 +34,9 @@ registerBlockType('tlf-plugins/video-container', {
     edit: ({ attributes, setAttributes }) => {
 
       // custom functions
-      function onVimeoIdChange( videoIdValue ) {
-        setAttributes( { vimeoId: videoIdValue } )
+      function onYouTubeIdChange( videoIdValue ) {
+        var trimedVideoId = videoIdValue.replace("https://youtu.be/", "");
+        setAttributes( { youTubeId: trimedVideoId } );
       }
       function onSetContainerHeight( containerHeightValue ) {
         setAttributes( { containerHeight: containerHeightValue } );
@@ -47,8 +48,8 @@ registerBlockType('tlf-plugins/video-container', {
             <PanelRow>
                 <TextControl 
                 label="Vimeo video Id"
-                value={ attributes.vimeoId }
-                onChange={ onVimeoIdChange }/>
+                value={ attributes.youTubeId }
+                onChange={ onYouTubeIdChange }/>
             </PanelRow>
             <PanelRow>
                 <SelectControl
@@ -83,12 +84,12 @@ registerBlockType('tlf-plugins/video-container', {
     save: ({ attributes }) => {
 
       return (
-        <div class="video-container-with-popup" data-vimeo-id={attributes.vimeoId} data-vimeo-height={attributes.containerHeight}>
+        <div class="video-container-with-popup" data-video-id={attributes.youTubeId} data-video-height={attributes.containerHeight}>
             <InnerBlocks.Content />
             <div class="play-icon center-transform"><i class="fa-solid fa-play"></i></div>
-            <div class="vimeo-container">
-              <div class="close-video"><i class="fa-solid fa-xmark"></i> Close</div>
-              <iframe src={"https://player.vimeo.com/video/" + attributes.vimeoId } width="100%" height="100%" frameborder="0" id={"vimeo_" + attributes.vimeoId} webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>
+            <div class="video-container">
+              <div class="close-video"><i class="fa-solid fa-xmark"></i></div>
+              <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + attributes.youTubeId} id={"video_" + attributes.youTubeId} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             
         </div>

@@ -124,9 +124,9 @@ registerBlockType('tlf-plugins/video-container', {
   category: 'thelostfoundry',
   // custom attributes
   attributes: {
-    vimeoId: {
+    youTubeId: {
       type: 'string',
-      default: '586578142'
+      default: 'https://youtu.be/VkO_7eTE0hU?si=Rs9s5kpQhy8w54z9'
     },
     containerHeight: {
       type: 'string',
@@ -139,9 +139,10 @@ registerBlockType('tlf-plugins/video-container', {
     setAttributes
   }) => {
     // custom functions
-    function onVimeoIdChange(videoIdValue) {
+    function onYouTubeIdChange(videoIdValue) {
+      var trimedVideoId = videoIdValue.replace("https://youtu.be/", "");
       setAttributes({
-        vimeoId: videoIdValue
+        youTubeId: trimedVideoId
       });
     }
     function onSetContainerHeight(containerHeightValue) {
@@ -157,8 +158,8 @@ registerBlockType('tlf-plugins/video-container', {
       title: 'Video Settings'
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TextControl, {
       label: "Vimeo video Id",
-      value: attributes.vimeoId,
-      onChange: onVimeoIdChange
+      value: attributes.youTubeId,
+      onChange: onYouTubeIdChange
     })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SelectControl, {
       label: "Media size",
       value: attributes.containerHeight,
@@ -195,28 +196,27 @@ registerBlockType('tlf-plugins/video-container', {
   }) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "video-container-with-popup",
-      "data-vimeo-id": attributes.vimeoId,
-      "data-vimeo-height": attributes.containerHeight
+      "data-video-id": attributes.youTubeId,
+      "data-video-height": attributes.containerHeight
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "play-icon center-transform"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       class: "fa-solid fa-play"
     })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "vimeo-container"
+      class: "video-container"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "close-video"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       class: "fa-solid fa-xmark"
-    }), " Close"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
-      src: "https://player.vimeo.com/video/" + attributes.vimeoId,
-      width: "100%",
-      height: "100%",
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+      width: "560",
+      height: "315",
+      src: "https://www.youtube.com/embed/" + attributes.youTubeId,
+      id: "video_" + attributes.youTubeId,
+      title: "YouTube video player",
       frameborder: "0",
-      id: "vimeo_" + attributes.vimeoId,
-      webkitallowfullscreen: true,
-      mozallowfullscreen: true,
-      allowfullscreen: true,
-      allow: "autoplay"
+      allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+      allowfullscreen: true
     })));
   }
 });

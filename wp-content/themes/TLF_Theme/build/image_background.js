@@ -131,6 +131,10 @@ registerBlockType('tlf-plugins/image-background', {
     containerHeight: {
       type: 'string',
       default: 'one-quarter-height'
+    },
+    addPadding: {
+      type: 'boolean',
+      default: true
     }
   },
   // built-in functions
@@ -142,6 +146,11 @@ registerBlockType('tlf-plugins/image-background', {
     function onSetContainerHeight(containerHeightValue) {
       setAttributes({
         containerHeight: containerHeightValue
+      });
+    }
+    function onSetPadding(addPaddingValue) {
+      setAttributes({
+        addPadding: addPaddingValue
       });
     }
     return [(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InspectorControls, {
@@ -167,6 +176,10 @@ registerBlockType('tlf-plugins/image-background', {
         value: 'one-quarter-height'
       }],
       onChange: onSetContainerHeight
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(CheckboxControl, {
+      label: "Add gap/padding top and bottom",
+      checked: attributes.addPadding,
+      onChange: onSetPadding
     })))),
     // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -185,7 +198,7 @@ registerBlockType('tlf-plugins/image-background', {
     attributes
   }) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "image-background",
+      class: "image-background" + (attributes.addPadding ? " background-top-bottom-padding" : ""),
       "data-container-height": attributes.containerHeight
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null));
   }

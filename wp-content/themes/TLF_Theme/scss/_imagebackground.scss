@@ -1,7 +1,10 @@
 .image-background {
     position: relative;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+
+    &.background-top-bottom-padding {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
 
     img {
         height: 100%;

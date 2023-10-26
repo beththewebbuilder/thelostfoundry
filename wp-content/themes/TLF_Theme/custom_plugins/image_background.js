@@ -29,6 +29,10 @@ registerBlockType('tlf-plugins/image-background', {
             type: 'string',
             default: 'one-quarter-height'
           },
+        addPadding: {
+          type: 'boolean',
+          default: true
+        }
     },
 
     // built-in functions
@@ -38,23 +42,32 @@ registerBlockType('tlf-plugins/image-background', {
       function onSetContainerHeight( containerHeightValue ) {
         setAttributes( { containerHeight: containerHeightValue } );
       }
+      function onSetPadding( addPaddingValue ) {
+        setAttributes( { addPadding: addPaddingValue } );
+      }
 
       return ([
         <InspectorControls style={ { marginBottom: '40px'} }>
         <PanelBody title={'Image Container Settings'}>
           <PanelRow>
-              <SelectControl
-                label="Media size"
-                value={ attributes.containerHeight }
-                options={[
-                  { label: 'Full screen', value: 'full-screen' },
-                  { label: '3/4 height', value: 'three-quarter-height' },
-                  { label: '1/2 height', value: 'half-height' },
-                  { label: '1/4 height', value: 'one-quarter-height' },
-                ]}
-                onChange={ onSetContainerHeight }
-              />
-            </PanelRow>
+            <SelectControl
+              label="Media size"
+              value={ attributes.containerHeight }
+              options={[
+                { label: 'Full screen', value: 'full-screen' },
+                { label: '3/4 height', value: 'three-quarter-height' },
+                { label: '1/2 height', value: 'half-height' },
+                { label: '1/4 height', value: 'one-quarter-height' },
+              ]}
+              onChange={ onSetContainerHeight }
+            />
+          </PanelRow>
+          <PanelRow>
+            <CheckboxControl
+              label="Add gap/padding top and bottom"
+              checked={ attributes.addPadding }
+              onChange={ onSetPadding }/>
+          </PanelRow>
         </PanelBody>
       </InspectorControls>,
 
@@ -75,7 +88,7 @@ registerBlockType('tlf-plugins/image-background', {
     save: ({ attributes }) => {
 
       return (
-        <div class={"image-background"} data-container-height={attributes.containerHeight}>
+        <div class={"image-background" + (attributes.addPadding ? " background-top-bottom-padding" : "")} data-container-height={attributes.containerHeight}>
           <InnerBlocks.Content />
         </div>
       );
