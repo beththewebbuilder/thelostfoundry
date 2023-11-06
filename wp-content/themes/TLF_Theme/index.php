@@ -11,7 +11,7 @@ echo $page[0]->post_content;
 ?>
 
 <div class="instagram-feed">
-    <?php echo do_shortcode('[instagram-feed feed=2]'); ?>
+    <?php echo do_shortcode('[instagram-feed feed=1]'); ?>
 </div>
 
 <?php
