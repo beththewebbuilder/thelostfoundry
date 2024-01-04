@@ -1,0 +1,16 @@
+.popup-message {
+    background-color: $primary-red;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    padding: 2rem !important;
+    max-width: 35rem !important;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: none;
+
+    .close-popup {
+        float: right;
+        cursor: pointer;
+    }
+}

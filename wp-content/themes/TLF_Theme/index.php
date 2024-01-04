@@ -14,6 +14,7 @@ echo $page[0]->post_content;
     <?php echo do_shortcode('[instagram-feed feed=1]'); ?>
 </div>
 
+
 <?php
 
 get_footer(); 

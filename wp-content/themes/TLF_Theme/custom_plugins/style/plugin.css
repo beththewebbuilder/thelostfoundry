@@ -5,7 +5,7 @@
   padding: 1rem;
 }
 
-.video-container-block, .autoplay-video-container-block {
+.video-container-block, .autoplay-video-container-block, .popup-message-block {
   border-color: #E24C74;
   background-color: #F9DBE3;
 }

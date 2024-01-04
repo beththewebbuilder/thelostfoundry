@@ -2,8 +2,8 @@
 Theme Name: The Lost Foundry Theme
 Author: Bethany Fowler  
 Author URI: https://bethanyfowler.me/
-Description: Styled theme for The Lost Foundry company website - initially created in August 2023
-Version: 2.2.0
+Description: Styled theme for The Lost Foundry company website - initially created in August 2023. Last updated: 4th Jan 2023 - added popup subscription
+Version: 2.3.0
 Text Domain: thelostfoundry
 */
 
@@ -19,3 +19,4 @@ Text Domain: thelostfoundry
 @import '_carousel.scss';
 @import '_contact.scss';
 @import '_footer.scss';
+@import '_popupmessage.scss';

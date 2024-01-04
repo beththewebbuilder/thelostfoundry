@@ -1,5 +1,34 @@
 $(document).ready(function(){
 
+    $('#subscribe-form').click(function(event) {
+      event.preventDefault();
+      var email = $("#email").val();
+
+      if(email.trim() === '')
+      {
+        $.ajax({
+          type : "post",
+          url : myajax.ajaxurl,
+          data : {
+            action: "send_subscription_email",
+            email: email,
+          },
+          success: function(response) {
+            console.log(response);
+            $(".popup-message").slideUp();
+            setCookie("popup", "hide", 30);
+          },
+          error: function (xhr, ajaxOptions, thrownError) {
+            console.log("Error submitting subscription:");
+            console.log(xhr);
+            console.log(ajaxOptions);
+            console.log(thrownError);
+            $(".error-msg").show();
+          }
+       });
+      }
+    });
+
     $('#submit-contact-form').click(function(event) {
       event.preventDefault();
       var name = $("#name").val();

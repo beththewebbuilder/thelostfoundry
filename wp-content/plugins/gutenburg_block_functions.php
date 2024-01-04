@@ -55,6 +55,8 @@ function custom_gutenburg_blocks()
     generateRegisterScriptText($pluginFolder, "faq_item", "faq-item");
     // contact form
     generateRegisterScriptText($pluginFolder, "contact_form", "contact-form");
+    // popup message
+    generateRegisterScriptText($pluginFolder, "popup_message", "popup-message");
 
 }
 add_action('init', 'custom_gutenburg_blocks');
