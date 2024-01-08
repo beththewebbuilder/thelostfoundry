@@ -75,6 +75,9 @@ $(document).ready(function() {
     });
     $("#mc-embedded-subscribe").click(function() {
         setCookie("popup", "hide", 30);
+        sleep(1000).then(() => {
+            $(".popup-message").slideDown();
+        })
     });
     $(".close-popup").click(function() {
         $(".popup-message").slideUp();
