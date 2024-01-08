@@ -157,7 +157,7 @@ registerBlockType('tlf-plugins/popup-message', {
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "popup-message-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: "https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Content.png"
+      src: "https://buildnbloom.co.uk/wp-content/uploads/2024/01/TLF-Popup-Message.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,
@@ -175,25 +175,73 @@ registerBlockType('tlf-plugins/popup-message', {
       class: "close-popup"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       class: "fa-solid fa-xmark"
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
-      id: "subscribeForm",
-      method: "POST"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "input-group mb-3"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "text",
-      id: "email",
-      class: "form-control",
-      placeholder: "Your email address",
-      "aria-label": "Subscribers email address",
-      "aria-describedby": "Email address input"
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks.Content, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      id: "mc_embed_shell"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("link", {
+      href: "//cdn-images.mailchimp.com/embedcode/classic-061523.css",
+      rel: "stylesheet",
+      type: "text/css"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      class: "input-group-append"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-      class: "btn btn-custom",
-      id: "subscribe-form",
-      type: "submit"
-    }, attributes.buttonTitle)))));
+      id: "mc_embed_signup"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
+      action: "https://apex-media.us8.list-manage.com/subscribe/post?u=7f93e36b9a64a83719d395c1d&id=34b9b24ea7&f_id=00137de0f0",
+      method: "post",
+      id: "mc-embedded-subscribe-form",
+      name: "mc-embedded-subscribe-form",
+      class: "validate",
+      target: "_blank"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      id: "mc_embed_signup_scroll"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "mc-field-group"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+      for: "mce-EMAIL"
+    }, "Email Address"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "email",
+      name: "EMAIL",
+      class: "required email",
+      id: "mce-EMAIL",
+      required: "",
+      value: ""
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      hidden: ""
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "hidden",
+      name: "tags",
+      value: "4893856"
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      id: "mce-responses",
+      class: "clear foot"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "response",
+      id: "mce-error-response",
+      style: "display: none;"
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "response",
+      id: "mce-success-response",
+      style: "display: none;"
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      "aria-hidden": "true",
+      style: "position: absolute; left: -5000px;"
+    }, "/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "text",
+      name: "b_7f93e36b9a64a83719d395c1d_34b9b24ea7",
+      tabindex: "-1",
+      value: ""
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "optionalParent"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "clear foot"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "submit",
+      name: "subscribe",
+      id: "mc-embedded-subscribe",
+      class: "button",
+      value: "Subscribe"
+    })))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("script", {
+      type: "text/javascript",
+      src: "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+    })));
   }
 });
 })();

@@ -49,7 +49,7 @@ registerBlockType('tlf-plugins/popup-message', {
 
         // templateLock: enforces rules on what the user is allowed to change. 'All' - disabled user control, 'Insert' - change order but no deleting or inserting, 'False' - off
         <div class="popup-message-block custom-block">
-          <img src="https://buildnbloom.co.uk/wp-content/uploads/2023/08/TLF-Content.png"/>
+          <img src="https://buildnbloom.co.uk/wp-content/uploads/2024/01/TLF-Popup-Message.png"/>
           <InnerBlocks 
             allowedBlocks={ ALLLOWED_BLOCKS } 
             template={ BLOCK_TEMPLATE } 
@@ -67,14 +67,35 @@ registerBlockType('tlf-plugins/popup-message', {
         <div class={"container popup-message"}>
             <div class="close-popup"><i class="fa-solid fa-xmark"></i></div>
           <InnerBlocks.Content />
-          <form id="subscribeForm" method="POST">
-            <div class="input-group mb-3">
-                <input type="text" id="email" class="form-control" placeholder="Your email address" aria-label="Subscribers email address" aria-describedby="Email address input"/>
-                <div class="input-group-append">
-                    <button class="btn btn-custom" id="subscribe-form" type="submit">{attributes.buttonTitle}</button>
-                </div>
+
+          <div id="mc_embed_shell">
+      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"/>
+<div id="mc_embed_signup">
+    <form action="https://apex-media.us8.list-manage.com/subscribe/post?u=7f93e36b9a64a83719d395c1d&amp;id=34b9b24ea7&amp;f_id=00137de0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+        <div id="mc_embed_signup_scroll">
+          <div class="mc-field-group">
+            <label for="mce-EMAIL">Email Address</label>
+            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""/>
+          </div>
+          <div hidden=""><input type="hidden" name="tags" value="4893856"/></div>
+          <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+          </div>
+          <div aria-hidden="true" style="position: absolute; left: -5000px;">
+          /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+          <input type="text" name="b_7f93e36b9a64a83719d395c1d_34b9b24ea7" tabindex="-1" value=""/>
+        </div>
+        <div class="optionalParent">
+            <div class="clear foot">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe"/>
             </div>
-          </form>
+        </div>
+    </div>
+</form>
+</div>
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script></div>
+
         </div>
       );
     }

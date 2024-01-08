@@ -213,7 +213,7 @@ registerBlockType('tlf-plugins/contact-form', {
       name: "captcha",
       class: "form-control",
       required: "required"
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("em", null, "By submitting this form you are agreeing to receive marketing communications from The Lost Foundry via email.")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "success-msg"
     }, "\uD83C\uDF89 Thank you for your email! We will get back to you as soon as possible"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "error-msg"

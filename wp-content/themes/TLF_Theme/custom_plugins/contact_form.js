@@ -86,6 +86,9 @@ registerBlockType('tlf-plugins/contact-form', {
                             <div>3 + 2 =</div>
                             <input id="captcha" type="text" name="captcha" class="form-control" required="required"></input>
                         </div>
+                        <p>
+                            <em>By submitting this form you are agreeing to receive marketing communications from The Lost Foundry via email.</em>
+                        </p>
                         <div class="success-msg">🎉 Thank you for your email! We will get back to you as soon as possible</div>
                         <div class="error-msg"><i class="far fa-sad-tear"></i> Oh no, your email didn't send! Have you filled out all the fields? Try again or send us an email instead to <a href="mailto:rich@thelostfoundry.co.uk">rich@thelostfoundry.co.uk</a>.</div>
                         <button type="submit" class="btn btn-custom" id="submit-contact-form">

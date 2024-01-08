@@ -3,7 +3,7 @@
 Plugin Name: BnB Send Email
 Plugin URI:
 Description: Using Ajax function to send email to company address
-Version: 0.1
+Version: 0.2
 Author: Bethany Fowler
 Author URI: https://bethanyfowler.me
 */
@@ -34,18 +34,6 @@ function send_email() {
 
 add_action( 'wp_ajax_send_subscription_email', 'send_subscription_email' );
 add_action( 'wp_ajax_nopriv_send_subscription_email', 'send_subscription_email' );
-
-function send_subscription_email() {
-
-  $email = $_POST['email'];
-
-  $message = "<h3>Email Subscription</h3><p>Marketing email subscription from: " . $email . "</p>";
-
-  sendEmail("The Lost Foundry Email Subscription", $message, $email);
-
-  wp_die();
-
-}
 
 function getEmailHeaders($client_email) {
   $from = $client_email;
