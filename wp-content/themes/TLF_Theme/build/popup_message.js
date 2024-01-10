@@ -120,8 +120,8 @@ const BLOCK_TEMPLATE = [['core/group', {}, [['core/heading', {
 //'namespace/block-slug'
 registerBlockType('tlf-plugins/popup-message', {
   // built-in attributes
-  title: 'Popup Message',
-  description: 'Add a popup message to the page.',
+  title: 'Subscribe Popup',
+  description: 'Add a popup message to the page that allows users to subscribe to your MailChimp marketing list.',
   icon: 'admin-comments',
   category: 'thelostfoundry',
   // custom attributes
@@ -157,7 +157,7 @@ registerBlockType('tlf-plugins/popup-message', {
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       class: "popup-message-block custom-block"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: "https://buildnbloom.co.uk/wp-content/uploads/2024/01/TLF-Popup-Message.png"
+      src: "https://buildnbloom.co.uk/wp-content/uploads/2024/01/TLF-MailChimp-Subscribe-Popup.png"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(InnerBlocks, {
       allowedBlocks: ALLLOWED_BLOCKS,
       template: BLOCK_TEMPLATE,
